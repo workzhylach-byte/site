@@ -992,12 +992,11 @@ function nextTime(li,now,DUR){
   const m=new Date(now+3*3600e3); // время Минска (UTC+3)
   let t=Date.UTC(m.getUTCFullYear(),m.getUTCMonth(),m.getUTCDate(),hh,mm)-3*3600e3;
   t+=((d-m.getUTCDay()+7)%7)*864e5;
-  if(t+DUR<=now)t+=7*864e5;
+  if(t<=now)t+=7*864e5; // как только встреча началась — считаем до следующей
   return t;
 }
 function tick(){
-  // Длительность встречи для статуса «идёт сейчас» — 2 часа.
-  const DUR=2*3600e3, now=Date.now();
+  const DUR=0, now=Date.now();
   const all=[...document.querySelectorAll('#slist li')];
   const items=all.filter(li=>li.dataset.d!==undefined);
   let best=null;
@@ -1012,8 +1011,7 @@ function tick(){
   const lbl=document.getElementById('nextLbl'),when=document.getElementById('nextWhen');
   if(monthly){lbl.textContent='Раз в месяц';when.textContent='Воскресенье, 14:00';return}
   const t=sel===best.li?best.t:nextTime(sel,now,DUR);
-  const live=now>=t;
-  lbl.textContent=live?'Сейчас идёт':(sel===best.li?'Ближайшая встреча':'До встречи');
+  lbl.textContent=sel===best.li?'Ближайшая встреча':'До встречи';
   const days=['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
   when.textContent=days[+sel.dataset.d]+', '+sel.dataset.h.padStart(2,'0')+':'+sel.dataset.m.padStart(2,'0');
   let x=Math.max(0,t-now)/1000;

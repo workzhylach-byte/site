@@ -756,7 +756,7 @@ a.crow:hover{border-color:rgba(228,202,158,.4);background:#17212D}
     <div class="t-head"><div><span class="eyebrow reveal">Архив</span><h2 class="reveal d1">Все проповеди</h2></div><p class="reveal d2">Выберите проповедника или найдите тему по слову.</p></div>
     <div class="ev-bar dark reveal">
       <div class="rchips" id="sChips" role="group" aria-label="Проповедник"><button type="button" class="rchip on" data-f="all" aria-pressed="true">Все <i>3</i></button><button type="button" class="rchip" data-f="artem" aria-pressed="false">Артём Юрченко <i>1</i></button><button type="button" class="rchip" data-f="vladimir" aria-pressed="false">Владимир Тарасов <i>1</i></button><button type="button" class="rchip" data-f="gulko" aria-pressed="false">Гулько Александр Иванович <i>1</i></button></div>
-      <label class="srch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="sSearch" placeholder="Поиск по теме или стиху" aria-label="Поиск по проповедям"></label>
+      <label class="srch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="sSearch" placeholder="Поиск по теме, стиху или тексту" aria-label="Поиск по проповедям"></label>
     </div>
     <div class="sgrid" id="sGrid">
       <article class="sc reveal d1" data-p="artem" data-text="господь благотворит сегодня артем юрченко иер. 29:11 бог желает нам блага, но наше состояние во многом зависит от наших решений. нерешенные конфликты, проблемы в семье и в сердце сами не рассасываются — не откладывайте на завтра то, что можете и должны сделать сегодня, и не откладывайте встречу с богом.">
@@ -872,6 +872,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 .sc-play{position:absolute;right:16px;bottom:16px;width:58px;height:58px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .3s}
 .sc-play svg{width:24px;height:24px}
 .sc-cover:hover .sc-play{transform:scale(1.08)}
+.sc-hit{font-size:14px;line-height:1.55;color:#C4CED8;padding:10px 14px;border-radius:14px;background:rgba(228,202,158,.07);border-left:2px solid var(--gold)}.sc-hit small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}.sc-hit mark{background:rgba(228,202,158,.35);color:#fff;border-radius:3px;padding:0 2px}
 .sc-body{display:flex;flex-direction:column;gap:12px;padding:22px 24px 26px;flex:1}
 .sc-who{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)}
 .sc-who img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(228,202,158,.45)}
@@ -957,15 +958,75 @@ button.slink{font:inherit;font-size:14.5px;font-weight:600;color:inherit;cursor:
     document.getElementById('sumTitle').textContent=t.dataset.title;document.getElementById('sumMeta').textContent=t.dataset.meta;
     document.getElementById('sumBody').replaceChildren(t.content.cloneNode(true));document.getElementById('sumPdf').href=t.dataset.pdf;
     sm.showModal();sm.scrollTop=0;document.body.style.overflow='hidden'});
-  // фильтр и поиск
+  // фильтр и поиск (+ полнотекстовый поиск по архиву проповедей)
   const grid=document.getElementById('sGrid');if(!grid)return;
-  const cards=[...grid.children],chips=[...document.querySelectorAll('#sChips .rchip')],q=document.getElementById('sSearch'),empty=document.getElementById('sEmpty');
+  const ARCH='https://workzhylach-byte.github.io/propovedi/';
+  const chipsBox=document.getElementById('sChips'),q=document.getElementById('sSearch'),empty=document.getElementById('sEmpty');
+  const norm=t=>String(t||'').toLowerCase().replace(/ё/g,'е');
+  const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const dnum=d=>{const m=/(\d{2})\.(\d{2})\.(\d{4})/.exec(d||'');return m?+(m[3]+m[2]+m[1]):0};
+  let cards=[...grid.children];
+  cards.forEach(c=>{c._date=dnum(c.querySelector('.sc-who span')?.textContent)});
   let f='all';
-  const apply=()=>{const s=q.value.trim().toLowerCase().replace(/ё/g,'е');let n=0;
-    cards.forEach(c=>{const ok=(f==='all'||c.dataset.p===f)&&(!s||c.dataset.text.includes(s));c.hidden=!ok;if(ok){n++;c.classList.add('in')}});empty.hidden=n>0};
-  const pick=v=>{f=v;chips.forEach(c=>{const on=c.dataset.f===v;c.classList.toggle('on',on);c.setAttribute('aria-pressed',on)});apply()};
-  chips.forEach(c=>c.addEventListener('click',()=>pick(c.dataset.f)));q.addEventListener('input',apply);
+  const chips=()=>[...chipsBox.querySelectorAll('.rchip')];
+  // фрагмент текста вокруг найденного слова
+  const snippet=(raw,words)=>{const n=norm(raw);let i=-1,w='';for(const x of words){const k=n.indexOf(x);if(k>-1&&(i<0||k<i)){i=k;w=x}}
+    if(i<0)return '';const a=Math.max(0,i-70),b=Math.min(raw.length,i+w.length+110);
+    let out=esc(raw.slice(a,b)),nn=norm(raw.slice(a,b));
+    // подсветка всех слов
+    const marks=[];words.forEach(x=>{let k=0;while((k=nn.indexOf(x,k))>-1){marks.push([k,k+x.length]);k+=x.length}});
+    if(marks.length){marks.sort((x,y)=>x[0]-y[0]);let r='',pos=0;const src=raw.slice(a,b);
+      marks.forEach(([x,y])=>{if(x<pos)return;r+=esc(src.slice(pos,x))+'<mark>'+esc(src.slice(x,y))+'</mark>';pos=y});out=r+esc(src.slice(pos))}
+    return (a>0?'…':'')+out+(b<raw.length?'…':'')};
+  const apply=()=>{const words=norm(q.value).trim().split(/\s+/).filter(Boolean);let n=0;
+    cards.forEach(c=>{const hay=c.dataset.text+' '+(c._full?norm(c._full):'');
+      const ok=(f==='all'||c.dataset.p===f)&&words.every(w=>hay.includes(w));c.hidden=!ok;
+      let hit=c.querySelector('.sc-hit');
+      const inShort=words.length&&words.every(w=>c.dataset.text.includes(w));
+      if(ok&&words.length&&!inShort&&c._full){if(!hit){hit=document.createElement('div');hit.className='sc-hit';c.querySelector('h3').after(hit)}
+        hit.innerHTML='<small>Найдено в тексте проповеди</small>'+snippet(c._full,words);hit.hidden=false}
+      else if(hit)hit.hidden=true;
+      if(ok){n++;c.classList.add('in')}});empty.hidden=n>0};
+  const pick=v=>{f=v;chips().forEach(c=>{const on=c.dataset.f===v;c.classList.toggle('on',on);c.setAttribute('aria-pressed',on)});apply()};
+  chipsBox.addEventListener('click',e=>{const c=e.target.closest('.rchip');if(c)pick(c.dataset.f)});
+  q.addEventListener('input',apply);
   document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{pick(b.dataset.go);q.value='';apply();document.getElementById('all').scrollIntoView({behavior:'smooth'})}));
+  const counts=()=>{chips().forEach(c=>{const i=c.querySelector('i');if(i)i.textContent=c.dataset.f==='all'?cards.length:cards.filter(x=>x.dataset.p===c.dataset.f).length})};
+  // подгружаем архив
+  const sc=document.createElement('script');sc.src=ARCH+'js/data.js?v='+Date.now().toString().slice(0,-5);
+  sc.onload=()=>{let D;try{D=(0,eval)('typeof DATA!=="undefined"?DATA:null')}catch(e){}if(!D||!D.preachers)return;
+    const blocks=a=>(a||[]).map(x=>x.text).join(' ');
+    const ico={sum:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+      txt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C6 4.5 9 4.5 12 6c3-1.5 6-1.5 8-.5v13c-2-1-5-1-8 .5-3-1.5-6-1.5-8-.5z"/><path d="M12 6v13"/></svg>',
+      yt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>',
+      play:'<svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg>'};
+    D.preachers.forEach(p=>{
+      if(!chips().some(c=>c.dataset.f===p.id)){const b=document.createElement('button');b.type='button';b.className='rchip';b.dataset.f=p.id;b.setAttribute('aria-pressed','false');b.innerHTML=esc(p.name)+' <i>0</i>';chipsBox.appendChild(b)}
+      (p.sermons||[]).forEach(s=>{
+        const full=blocks(s.text)+' '+blocks(s.summary);
+        let c=cards.find(x=>norm(x.querySelector('h3')?.textContent).trim()===norm(s.title).trim());
+        if(!c){
+          const desc=(s.summary||[]).find(x=>x.type==='p')?.text||'';
+          const emb=s.embed?s.embed.replace('www.youtube.com','www.youtube-nocookie.com')+(s.embed.includes('?')?'&':'?')+'autoplay=1':'';
+          const abs=u=>u?(/^https?:/.test(u)?u:ARCH+u):'';
+          const pname=chips().find(x=>x.dataset.f===p.id)?.firstChild.textContent.trim()||p.name;
+          c=document.createElement('article');c.className='sc in';c.dataset.p=p.id;
+          c.innerHTML=(s.cover||emb?`<${emb?'button type="button"':'div'} class="sc-cover"${emb?` data-video="${esc(emb)}" data-vtitle="${esc(s.title)}" aria-label="Смотреть «${esc(s.title)}»"`:''}>${s.cover?`<img src="${esc(abs(s.cover))}" alt="" loading="lazy">`:''}${emb?`<span class="sc-play">${ico.play}</span>`:''}</${emb?'button':'div'}>`:'')+
+            `<div class="sc-body"><div class="sc-who">${p.photo?`<img src="${esc(abs(p.photo))}" alt="">`:''}<span><b>${esc(pname)}</b>${esc(s.date||'')}</span></div>
+            <h3>${esc(s.title)}</h3>${desc?`<p>${esc(desc)}</p>`:''}<div class="sermon-links">`+
+            (s.summaryPdf?`<a href="${esc(abs(s.summaryPdf))}" target="_blank" rel="noopener" class="slink">${ico.sum}Конспект PDF</a>`:'')+
+            (s.pdf?`<a href="${esc(abs(s.pdf))}" target="_blank" rel="noopener" class="slink">${ico.txt}Полный текст</a>`:'')+
+            (s.youtube?`<a href="${esc(s.youtube)}" target="_blank" rel="noopener" class="slink">${ico.yt}YouTube</a>`:'')+
+            `<a href="${ARCH}#/preacher/${esc(p.id)}" target="_blank" rel="noopener" class="slink">${ico.txt}В архиве</a></div></div>`;
+          c.dataset.text=norm([s.title,pname,p.name,s.date,desc].join(' '));
+          c._date=dnum(s.date);cards.push(c);
+        }
+        c._full=full;c.dataset.text+=' '+norm(p.name);
+      });
+    });
+    cards.sort((a,b)=>b._date-a._date);grid.append(...cards);counts();apply();
+  };
+  document.body.appendChild(sc);
 })();
 </script>
 

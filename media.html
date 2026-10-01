@@ -674,6 +674,7 @@ a.crow:hover{border-color:rgba(228,202,158,.4);background:#17212D}
 .legal-card b{font-weight:600;font-size:16px;line-height:1.45}
 @media(max-width:960px){.cgrid{grid-template-columns:1fr}.cmap{min-height:0}.legal-card{grid-template-columns:1fr}}
 @media(max-width:520px){.csoc{grid-template-columns:1fr}.csoc a{flex-direction:row;align-items:center}}
+.pick{display:flex;flex-wrap:wrap;gap:8px}.pick label{cursor:pointer;position:relative}.pick input{position:absolute;opacity:0;pointer-events:none}.pick span{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);font-size:14px;font-weight:600;color:#C4CED8;transition:.2s}.pick label:hover span{border-color:rgba(255,255,255,.3)}.pick input:checked+span{background:var(--gold);border-color:var(--gold);color:var(--ink)}.pick input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}.fset{grid-column:span 2;border:0;min-width:0}.fset legend{font-size:13.5px;font-weight:600;color:#C4CED8;margin-bottom:10px;padding:0}@media(max-width:560px){.fset{grid-column:auto}}
 </style>
 </head>
 <body>
@@ -783,7 +784,7 @@ a.crow:hover{border-color:rgba(228,202,158,.4);background:#17212D}
     </div>
     <div class="join reveal">
       <div><span class="eyebrow">Медиа-служение</span><h2>Снимаете, монтируете или ведёте соцсети?</h2><p>Присоединяйтесь к медиа-команде: фото, видео, трансляции и дизайн для церкви.</p></div>
-      <div class="acts"><a href="team.html" class="btn btn-ink">Стать частью команды <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="contacts.html" class="btn btn-line">Написать нам</a></div>
+      <div class="acts"><button type="button" class="btn btn-ink" data-open-join>Стать частью команды <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><a href="contacts.html" class="btn btn-line">Написать нам</a></div>
     </div>
   </div>
 </section>
@@ -1005,6 +1006,55 @@ button.slink{font:inherit;font-size:14.5px;font-weight:600;color:inherit;cursor:
 @media(max-width:560px){.pchoice{grid-template-columns:1fr}}
 </style>
 
+<dialog class="modal" id="joinModal" aria-labelledby="joinTitle">
+  <button type="button" class="modal-x" data-close aria-label="Закрыть">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <form id="joinForm" class="kform" novalidate>
+    <!-- Отправку формы подключить к CMS / почте / Telegram-боту -->
+    <span class="eyebrow">Команда церкви</span>
+    <h3 id="joinTitle">Стать частью команды</h3>
+    <p class="kform-sub">Оставьте контакты — лидер служения свяжется с вами, познакомится и расскажет, с чего начать.</p>
+    <div class="fgrid">
+      <label class="f wide"><span>Имя и фамилия *</span><input name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
+      <label class="f"><span>Телефон *</span><input name="phone" type="tel" required autocomplete="tel" placeholder="+375 (__) ___-__-__"></label>
+      <label class="f"><span>Telegram</span><input name="telegram" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="@username"></label>
+      <fieldset class="fset"><legend>Где хотели бы служить? Можно выбрать несколько</legend>
+        <div class="pick"><label><input type="checkbox" name="ministry" value="Воскресная школа"><span>Воскресная школа</span></label><label><input type="checkbox" name="ministry" value="Прославление"><span>Прославление</span></label><label><input type="checkbox" name="ministry" value="Поэтическое служение"><span>Поэтическое служение</span></label><label><input type="checkbox" name="ministry" value="Молодёжное служение"><span>Молодёжное служение</span></label><label><input type="checkbox" name="ministry" value="Подростковое служение"><span>Подростковое служение</span></label><label><input type="checkbox" name="ministry" value="Медиа"><span>Медиа</span></label><label><input type="checkbox" name="ministry" value="Техническое служение"><span>Техническое служение</span></label><label><input type="checkbox" name="ministry" value="Встреча гостей"><span>Встреча гостей</span></label><label><input type="checkbox" name="ministry" value="Пока не знаю"><span>Пока не знаю</span></label></div>
+      </fieldset>
+      <label class="f wide"><span>Расскажите немного о себе</span><textarea name="about" rows="3" placeholder="Что умеете, что вдохновляет, есть ли опыт служения"></textarea></label>
+      <label class="check wide"><input type="checkbox" name="agree" required><span>Я даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" style="color:var(--gold);text-decoration:underline">политикой конфиденциальности</a></span></label>
+    </div>
+    <div class="ferr" id="jErr" role="alert"></div>
+    <button type="submit" class="btn btn-gold kform-go">Отправить заявку</button>
+  </form>
+  <div class="kdone" id="jDone" hidden>
+    <div class="kdone-ico"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h3>Заявка отправлена</h3>
+    <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+    <button type="button" class="btn btn-ghost" data-close>Закрыть</button>
+  </div>
+</dialog>
+<script>
+(function(){
+const jm=document.getElementById('joinModal'),jf=document.getElementById('joinForm'),jd=document.getElementById('jDone'),je=document.getElementById('jErr');
+document.querySelectorAll('[data-open-join]').forEach(b=>b.addEventListener('click',()=>{jf.hidden=false;jd.hidden=true;je.textContent='';
+  const m=jf.querySelector('input[name="ministry"][value="Медиа"]');if(m)m.checked=true;
+  jm.showModal();document.body.style.overflow='hidden'}));
+jm.addEventListener('close',()=>{document.body.style.overflow=''});
+jm.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>jm.close()));
+jm.addEventListener('click',e=>{if(e.target===jm)jm.close()});
+jf.addEventListener('submit',e=>{
+  e.preventDefault();
+  const bad=[...jf.querySelectorAll('[required]')].filter(el=>el.type==='checkbox'?!el.checked:!el.value.trim());
+  jf.querySelectorAll('.invalid').forEach(el=>el.classList.remove('invalid'));
+  bad.forEach(el=>(el.type==='checkbox'?el.parentElement:el).classList.add('invalid'));
+  if(bad.length){je.textContent='Пожалуйста, заполните обязательные поля и подтвердите согласие.';bad[0].focus();return}
+  const tg=jf.elements.telegram;tg.value=tg.value.trim().replace(/^(https?:\/\/)?(t\.me\/)?@?/i,v=>tg.value.trim()?'@':'');
+  // TODO: отправить new FormData(jf) на сервер
+  jf.reset();jf.hidden=true;jd.hidden=false;
+});
+})();
+</script>
 <dialog class="modal" id="prayModal" aria-labelledby="prayTitle">
   <button type="button" class="modal-x" data-close aria-label="Закрыть">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
