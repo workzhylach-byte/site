@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Северная Волна — свежая рыба и морепродукты для ресторанов Петербурга</title>
+<meta name="description" content="Производство и оптовые поставки свежей рыбы, икры и морепродуктов для ресторанов, отелей и магазинов Санкт-Петербурга. Доставка в день заказа с термоконтролем.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2a3d; --navy-2:#173a52; --deep:#0a1e2c;
+  --ice:#eef4f7; --ice-2:#e1ebf1; --frost:#f7fafb; --white:#fff;
+  --wine:#9c2835; --wine-2:#b5323f; --wine-soft:#f6e6e8;
+  --salmon:#ef8a6b; --sea:#2c7fb0; --mint:#37b39a;
+  --text:#14232f; --muted:#5f707c; --line:#d9e4ea;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:Manrope,"Segoe UI",Arial,sans-serif;
+  --img:https://nordwave.ru/wp-content/uploads/;
+  --wrap:1240px; --g:32px; --r:24px;
+  --sh:0 30px 60px -30px rgba(15,42,61,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--sans);color:var(--text);background:var(--white);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--g)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(32px,4.2vw,54px)}
+h2 i,h1 i{color:var(--wine);font-weight:500}
+section{padding:120px 0;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);margin-bottom:18px}
+.kicker svg{width:26px;height:10px}
+.lead{font-size:18px;color:var(--muted);max-width:620px;margin-top:18px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:56px;padding:0 30px;border-radius:14px;font:700 15px var(--sans);letter-spacing:.02em;border:0;cursor:pointer;white-space:nowrap;transition:transform .2s,box-shadow .2s,background .2s}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-wine{background:var(--wine);color:#fff;box-shadow:0 14px 30px -12px rgba(156,40,53,.6)}
+.btn-wine:hover{background:var(--wine-2);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-out{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-out:hover{box-shadow:inset 0 0 0 1.5px var(--navy)}
+
+.bear{display:block}
+.bear path{fill:currentColor}
+
+/* top bar + header */
+.topbar{background:var(--navy);color:#b9cbd7;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:20px;height:40px;align-items:center}
+.topbar b{color:#fff;font-weight:700}
+.topbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mint);margin-right:8px;box-shadow:0 0 0 4px rgba(55,179,154,.2);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(55,179,154,0)}}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.hdr.sc{border-color:var(--line);box-shadow:0 10px 30px -20px rgba(15,42,61,.25)}
+.hdr .wrap{height:84px;display:flex;align-items:center;gap:36px}
+.logo{display:flex;align-items:center;gap:14px;color:var(--wine)}
+.logo .bear{width:58px;height:auto}
+.logo-t{font-family:var(--serif);font-weight:700;font-size:21px;color:var(--navy);line-height:1;letter-spacing:.01em;white-space:nowrap}
+.logo-t small{display:block;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.menu{display:flex;gap:30px;margin-left:auto;font-weight:600;font-size:15px;white-space:nowrap}
+.menu a{position:relative;padding:6px 0}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--wine);transition:right .25s}
+.menu a:hover::after{right:0}
+.hdr-cta{display:flex;align-items:center;gap:22px}
+.tel{display:flex;flex-direction:column;line-height:1.2;font-weight:800;color:var(--navy);white-space:nowrap}
+.tel small{font-weight:600;font-size:12px;color:var(--muted)}
+.hdr .btn{height:48px;padding:0 22px;font-size:14px}
+.burger{display:none;width:48px;height:48px;border-radius:12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;position:relative}
+.burger i{position:absolute;left:13px;right:13px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:23px}.burger i:nth-child(3){top:30px}
+.hdr.open .burger i:nth-child(1){top:23px;transform:rotate(45deg)}
+.hdr.open .burger i:nth-child(2){opacity:0}
+.hdr.open .burger i:nth-child(3){top:23px;transform:rotate(-45deg)}
+
+/* hero (v4) */
+.hero{position:relative;min-height:max(700px,calc(100svh - 124px));display:flex;flex-direction:column;justify-content:center;padding:90px 0 170px;color:#fff;background:var(--navy);overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-60px 0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:68% 50%;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.13) translate(-1.5%,1%)}}
+.hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,26,39,.92) 0%,rgba(9,26,39,.72) 38%,rgba(9,26,39,.15) 72%,rgba(9,26,39,0) 100%),linear-gradient(0deg,rgba(9,26,39,.75) 0%,transparent 45%)}
+.hero>.wrap{width:100%;position:relative}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:28px}
+.badge b{white-space:nowrap;background:var(--wine);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;letter-spacing:.06em}
+.hero-in{display:grid;grid-template-columns:1fr 330px;gap:60px;align-items:end}
+.hero .badge{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);box-shadow:none}
+.hero h1{font-size:clamp(40px,5.3vw,78px);line-height:1.04;margin:0 0 28px;color:#fff}
+.hero h1 .ln{display:block;overflow:hidden;padding:0 .04em .1em 0;margin-bottom:-.06em}
+.hero h1 .ln>span{display:inline-block;white-space:nowrap;transform:translateY(110%);animation:lnUp 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+.hero h1 i{color:#ffa385;font-weight:500;position:relative}
+.hero h1 i::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:3px;border-radius:3px;background:#ffa385;transform:scaleX(0);transform-origin:0 50%;animation:uline 1s .9s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes uline{to{transform:scaleX(1)}}
+@keyframes lnUp{to{transform:none}}
+.hero p.sub{font-size:19px;color:#d3e0e8;max-width:540px;margin-bottom:38px}
+.hero-act{display:flex;gap:14px;flex-wrap:wrap}
+.btn-glass{background:rgba(255,255,255,.1);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);backdrop-filter:blur(10px)}
+.btn-glass:hover{background:rgba(255,255,255,.2)}
+.fu{opacity:0;transform:translateY(24px);animation:fu .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes fu{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.45s}.d3{animation-delay:.6s}.d4{animation-delay:.8s}.d5{animation-delay:1s}
+
+.hero-side{padding:26px;border-radius:26px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.hs-top{display:flex;align-items:center;gap:18px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:18px}
+.hs-ring{width:78px;height:78px;flex:none}
+.hs-ring .bg{fill:none;stroke:rgba(255,255,255,.2);stroke-width:6}
+.hs-ring .fg{fill:none;stroke:#ffa385;stroke-width:6;stroke-linecap:round;stroke-dasharray:213.6;stroke-dashoffset:213.6;transform:rotate(-90deg);transform-origin:center;animation:ring 2s 1.1s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes ring{to{stroke-dashoffset:0}}
+.hs-ring text{fill:#fff;font:700 15px var(--sans)}
+.hs-top b{display:block;font-family:var(--serif);font-size:24px;line-height:1.15}
+.hs-top span{font-size:13px;color:#c4d4de}
+.hero-side ul{list-style:none;display:grid;gap:12px}
+.hero-side li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:600}
+.hero-side li svg{width:20px;height:20px;color:#6fe0c4;flex:none}
+.hs-live{margin-top:18px;font-size:13px;color:#c4d4de;display:flex;align-items:center;gap:8px}
+.hs-live .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#37b39a;box-shadow:0 0 0 4px rgba(55,179,154,.25);animation:pulse 2s infinite}
+
+.hero-bar{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border-radius:20px;background:rgba(9,26,39,.45);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero-bar div{display:flex;align-items:center;gap:14px;padding:20px 22px;font-size:14px;font-weight:600;line-height:1.3}
+.hero-bar div+div{border-left:1px solid rgba(255,255,255,.12)}
+.hero-bar svg{width:36px;height:36px;flex:none;padding:8px;border-radius:10px;background:rgba(255,255,255,.1);color:#ffa385}
+
+.scroll-hint{position:absolute;left:50%;bottom:104px;transform:translateX(-50%);width:26px;height:40px;border-radius:14px;border:2px solid rgba(255,255,255,.5)}
+.scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:wheel 1.8s infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(-4px)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.hero-waves{position:absolute;left:0;right:0;bottom:-1px;height:96px;overflow:hidden;pointer-events:none}
+.wv{position:absolute;left:0;bottom:0;width:200%;animation:wv 20s linear infinite}
+.wv.w1{height:100%;fill:rgba(15,42,61,.35);animation-duration:30s}
+.wv.w2{height:78%;fill:rgba(15,42,61,.6);animation-duration:22s;animation-direction:reverse}
+.wv.w3{height:56%;fill:#0f2a3d;animation-duration:16s}
+@keyframes wv{to{transform:translateX(-50%)}}
+
+@media (max-width:1140px){
+  .hero-in{grid-template-columns:1fr}
+  .hero-side{max-width:460px}
+  .hero-bar{grid-template-columns:1fr 1fr}
+  .hero-bar div:nth-child(3){border-left:0}
+  .hero-bar div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+  .scroll-hint{display:none}
+}
+@media (max-width:640px){
+  .hero{min-height:auto;padding:48px 0 120px}
+  .hero-shade{background:linear-gradient(180deg,rgba(9,26,39,.88) 0%,rgba(9,26,39,.7) 55%,rgba(9,26,39,.9) 100%)}
+  .hero h1{font-size:clamp(36px,10.5vw,46px)}
+  .hero h1 .ln>span{white-space:normal}
+  .hero p.sub{font-size:16px}
+  .hero-act .btn{width:100%}
+  .hero-in{gap:36px}
+  .hero-bar{margin-top:36px}
+  .hero-bar div{padding:14px;font-size:13px;gap:10px}
+  .hero-bar svg{width:32px;height:32px;padding:7px}
+}
+
+/* stats */
+.stats{background:var(--navy);color:#fff;padding:80px 0 90px;overflow:hidden}
+.stats .wm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:900px;color:#fff;opacity:.03}
+.st-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.st{padding:30px;border-radius:var(--r);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.st .num{font-family:var(--serif);font-size:clamp(40px,4vw,56px);line-height:1;font-weight:600}
+.st .num small{font-size:.5em;color:var(--salmon);margin-left:4px}
+.st p{color:#a9bfcd;font-size:14px;margin-top:10px}
+.st .viz{height:46px;margin-top:22px}
+.st .viz svg{width:100%;height:100%;overflow:visible}
+.spark{fill:none;stroke:var(--salmon);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 2s ease}
+.in .spark{stroke-dashoffset:0}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.18)}
+.dots i.on{background:var(--salmon)}
+.yrs{display:flex;align-items:flex-end;gap:5px;height:100%}
+.yrs i{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--salmon),rgba(239,138,107,.2));height:0;transition:height 1.2s cubic-bezier(.2,.8,.2,1)}
+.in .yrs i{height:var(--h)}
+.clock{display:flex;align-items:center;gap:14px}
+.st .clock svg{width:46px;height:46px;flex:none}
+.clock span{font-size:13px;color:#a9bfcd;line-height:1.35}
+
+/* clients */
+.clients{padding:56px 0;background:var(--ice)}
+.clients .wrap{display:flex;align-items:center;gap:40px}
+.clients h4{font-family:var(--serif);font-size:20px;color:var(--navy);flex:none;max-width:210px;line-height:1.25;font-weight:600}
+.marquee{overflow:hidden;flex:1;min-width:0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mtrack{display:flex;gap:16px;width:max-content;animation:mq 40s linear infinite}
+.mtrack span{padding:16px 28px;border-radius:14px;background:#fff;font-family:var(--serif);font-weight:600;font-size:19px;color:var(--navy);white-space:nowrap;box-shadow:0 6px 18px -14px rgba(15,42,61,.45)}
+@keyframes mq{to{transform:translateX(calc(-50% - 8px))}}
+
+/* catalog */
+.cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;height:340px;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#d7e6ef,#9fbccd);color:#fff;isolation:isolate;box-shadow:0 18px 40px -28px rgba(15,42,61,.6)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,30,44,0) 35%,rgba(10,30,44,.85));transition:background .4s}
+.card:hover img{transform:scale(1.08)}
+.card:hover::before{background:linear-gradient(180deg,rgba(156,40,53,.1) 0%,rgba(110,22,33,.9))}
+.card .num{position:absolute;top:22px;left:24px;font-size:12px;font-weight:800;letter-spacing:.14em;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+.card .body{position:absolute;left:24px;right:24px;bottom:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.card h3{font-size:25px;line-height:1.15}
+.card p{font-size:14px;opacity:.85;margin-top:6px}
+.card .go{flex:none;width:48px;height:48px;border-radius:50%;background:#fff;color:var(--wine);display:grid;place-items:center;transform:translateY(8px);opacity:0;transition:.35s}
+.card .go svg{width:20px;height:20px}
+.card:hover .go{transform:none;opacity:1}
+.cat-note{margin-top:30px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;padding:26px 30px;border-radius:var(--r);background:var(--wine-soft);border:1px solid #efd3d6}
+.cat-note .pdf{width:58px;height:58px;border-radius:16px;background:var(--wine);color:#fff;display:grid;place-items:center}
+.cat-note .pdf svg{width:28px;height:28px}
+.cat-note b{font-family:var(--serif);font-size:22px;color:var(--navy);display:block}
+.cat-note span{color:var(--muted)}
+
+/* path infographic */
+.path{background:var(--frost)}
+.path .topo{position:absolute;inset:0;width:100%;height:100%;opacity:.4;pointer-events:none}
+.path-line{position:relative;margin-top:70px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.path-line .track{position:absolute;left:10%;right:10%;top:44px;height:4px;border-radius:4px;background:var(--ice-2);overflow:hidden}
+.path-line .track i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--sea),var(--wine));transition:width 2.4s cubic-bezier(.4,0,.2,1)}
+.path-line.in .track i{width:100%}
+.pt{position:relative;text-align:center;padding:0 6px}
+.pt .ic{width:92px;height:92px;margin:0 auto 22px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--navy);box-shadow:0 14px 30px -18px rgba(15,42,61,.5);border:6px solid var(--frost);position:relative}
+.pt .ic svg{width:38px;height:38px}
+.pt .t{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--wine);background:var(--wine-soft);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.pt h3{font-family:var(--sans);font-weight:800;font-size:17px;margin-bottom:8px;color:var(--navy)}
+.pt p{font-size:14px;color:var(--muted)}
+.path-foot{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pf{text-align:left;display:flex;gap:16px;align-items:center;padding:22px 24px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.pf .ic{flex:none;width:48px;height:48px;border-radius:14px;background:var(--ice);color:var(--sea);display:grid;place-items:center}
+.pf .ic svg{width:24px;height:24px}
+.pf b{display:block;color:var(--navy)}
+.pf span{font-size:14px;color:var(--muted)}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:center}
+.why-photo{position:relative;height:620px}
+.why-photo .ph{position:absolute;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#c8dbe6,#7fa3b8);box-shadow:var(--sh)}
+.why-photo .ph img{width:100%;height:100%;object-fit:cover}
+.why-photo .p1{left:0;top:0;width:78%;height:72%}
+.why-photo .p2{right:0;bottom:0;width:58%;height:48%;border:8px solid #fff}
+.why-photo .seal{position:absolute;left:28px;bottom:40px;width:150px;height:150px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:var(--sh)}
+.why-photo .seal svg.txt{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);animation:spin 24s linear infinite}
+.why-photo .seal b{font-family:var(--serif);font-size:38px;line-height:1}
+.why-photo .seal small{display:block;font-size:11px;font-weight:700;letter-spacing:.1em}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.feat{padding:26px;border-radius:20px;background:var(--frost);border:1px solid var(--line);transition:.3s}
+.feat:hover{background:#fff;box-shadow:0 20px 40px -26px rgba(15,42,61,.5);transform:translateY(-3px)}
+.feat .ic{width:50px;height:50px;border-radius:14px;background:#fff;color:var(--wine);display:grid;place-items:center;margin-bottom:16px;box-shadow:0 6px 16px -10px rgba(15,42,61,.4)}
+.feat .ic svg{width:26px;height:26px}
+.feat h3{font-family:var(--sans);font-weight:800;font-size:17px;color:var(--navy);margin-bottom:6px}
+.feat p{font-size:14px;color:var(--muted)}
+
+/* services */
+.svc{background:var(--navy);color:#fff;overflow:hidden}
+.svc .kicker{color:var(--salmon)}
+.svc h2 i{color:var(--salmon)}
+.svc .lead{color:#a9bfcd}
+.svc .wm{position:absolute;right:-120px;top:40px;width:560px;color:#fff;opacity:.04}
+.svc-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px}
+.sv{border-radius:28px;overflow:hidden;background:var(--navy-2);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column}
+.sv .ph{height:300px;position:relative;overflow:hidden;background:linear-gradient(160deg,#2c5a78,#0f2a3d)}
+.sv .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.sv:hover .ph img{transform:scale(1.06)}
+.sv .ph b{position:absolute;left:24px;top:24px;font-size:12px;font-weight:800;letter-spacing:.14em;padding:7px 14px;border-radius:999px;background:var(--wine)}
+.sv .c{padding:36px;display:flex;flex-direction:column;gap:18px;flex:1}
+.sv h3{font-size:30px}
+.sv p{color:#b9cbd7}
+.sv ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.sv li{display:flex;gap:10px;font-size:15px;color:#dce7ee}
+.sv li svg{flex:none;width:20px;height:20px;color:var(--mint);margin-top:2px}
+.sv .btn{margin-top:auto;align-self:flex-start}
+
+/* promo parallax */
+.promo{padding:0;color:#fff}
+.promo-in{position:relative;min-height:460px;display:flex;align-items:center;background:linear-gradient(120deg,rgba(110,22,33,.92) 0%,rgba(156,40,53,.75) 45%,rgba(15,42,61,.35) 100%),var(--pbg,linear-gradient(135deg,#7e1f2a,#0f2a3d)) center/cover fixed}
+.promo-in .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:50px;align-items:center;width:100%}
+.big10{font-family:var(--serif);font-size:clamp(100px,14vw,200px);font-weight:700;line-height:.85;letter-spacing:-.03em;-webkit-text-stroke:2px #fff;color:transparent;position:relative}
+.big10 span{position:absolute;inset:0;color:#fff;clip-path:inset(0 0 0 0);animation:fillup 3s ease-in-out infinite alternate}
+@keyframes fillup{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+.promo h2{font-size:clamp(28px,3.4vw,44px);margin-bottom:12px}
+.promo p{color:#f3d6d9;max-width:480px}
+.promo small{display:block;margin-top:12px;font-size:13px;opacity:.75}
+
+/* geo */
+.geo-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+.geo-list{margin-top:34px;display:grid;gap:14px}
+.geo-list div{display:flex;gap:16px;align-items:center;padding:18px 22px;border-radius:16px;background:var(--frost);border:1px solid var(--line)}
+.geo-list i{flex:none;width:14px;height:14px;border-radius:50%;border:4px solid}
+.geo-list b{color:var(--navy)}
+.geo-list span{margin-left:auto;font-size:14px;color:var(--muted);text-align:right}
+.map{position:relative;border-radius:30px;background:radial-gradient(circle at 60% 45%,#fff 0,var(--ice) 70%);border:1px solid var(--line);aspect-ratio:1.1/1;overflow:hidden}
+.map svg{width:100%;height:100%}
+.route{fill:none;stroke:var(--wine);stroke-width:2.5;stroke-dasharray:6 8;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-14}}
+.pulse{transform-origin:center;transform-box:fill-box;animation:pz 2.4s ease-out infinite}
+@keyframes pz{from{transform:scale(.4);opacity:.7}to{transform:scale(2.4);opacity:0}}
+.map .legend{position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-radius:14px;padding:12px 16px;font-size:12px;color:var(--muted);font-weight:600}
+
+/* faq */
+.faq{background:var(--ice)}
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
+.faq-card{margin-top:34px;padding:30px;border-radius:var(--r);background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.faq-card .bear{position:absolute;right:-30px;bottom:-20px;width:200px;color:#fff;opacity:.07}
+.faq-card b{font-family:var(--serif);font-size:24px;display:block;margin-bottom:8px}
+.faq-card p{color:#a9bfcd;margin-bottom:20px}
+details{background:#fff;border-radius:18px;margin-bottom:12px;border:1px solid var(--line);transition:box-shadow .3s}
+details[open]{box-shadow:0 20px 40px -28px rgba(15,42,61,.5)}
+summary{list-style:none;cursor:pointer;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-weight:700;font-size:18px;color:var(--navy)}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:36px;height:36px;border-radius:50%;background:var(--ice);position:relative;transition:.3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--navy);transform:translate(-50%,-50%);transition:.3s}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{background:var(--wine)}
+details[open] summary i::before,details[open] summary i::after{background:#fff}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 28px 26px;color:var(--muted)}
+
+/* blog */
+.posts{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px}
+.post{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:.3s}
+.post:hover{transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(15,42,61,.55)}
+.post .ph{height:190px;overflow:hidden;background:linear-gradient(160deg,#d7e6ef,#9fbccd)}
+.post .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.post:hover .ph img{transform:scale(1.06)}
+.post .c{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.post time{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--wine);text-transform:uppercase}
+.post h3{font-family:var(--sans);font-weight:800;font-size:17px;line-height:1.35;color:var(--navy)}
+.post span{margin-top:auto;font-size:14px;font-weight:700;color:var(--sea)}
+
+/* contact */
+.contact{padding-top:0}
+.ct-box{display:grid;grid-template-columns:1fr 1fr;border-radius:32px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(15,42,61,.5)}
+.ct-l{background:var(--navy);color:#fff;padding:56px;position:relative;overflow:hidden}
+.ct-l .wm{position:absolute;right:-60px;bottom:-40px;width:380px;color:#fff;opacity:.05}
+.ct-l h2{margin-bottom:12px}
+.ct-l h2 i{color:var(--salmon)}
+.ct-l > p{color:#a9bfcd;margin-bottom:34px}
+.ci{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);position:relative}
+.ci .ic{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:var(--salmon)}
+.ci .ic svg{width:20px;height:20px}
+.ci small{display:block;color:#8ea6b6;font-size:13px}
+.ci b{font-size:17px;font-weight:700}
+.ct-r{background:#fff;padding:56px}
+.ct-r h3{font-size:30px;color:var(--navy);margin-bottom:8px}
+.ct-r > p{color:var(--muted);margin-bottom:28px}
+form{display:grid;gap:14px}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fi{display:flex;flex-direction:column;gap:6px}
+.fi label{font-size:13px;font-weight:700;color:var(--navy)}
+.fi input,.fi select,.fi textarea{font:500 16px var(--sans);padding:15px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--frost);color:var(--text);outline:none;transition:.2s;width:100%}
+.fi textarea{min-height:100px;resize:vertical}
+.fi input:focus,.fi select:focus,.fi textarea:focus{border-color:var(--sea);background:#fff;box-shadow:0 0 0 4px rgba(44,127,176,.12)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer;position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);font-size:14px;font-weight:600;transition:.2s}
+.chips input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+form .btn{width:100%;margin-top:6px}
+.cons{font-size:12px;color:var(--muted)}
+.cons a{text-decoration:underline}
+.ok{display:none;padding:14px 16px;border-radius:12px;background:#e3f6f1;color:#1d7a67;font-weight:700}
+
+/* footer */
+footer{background:var(--deep);color:#8ea6b6;font-size:14px;position:relative;margin-top:60px}
+footer .wave{position:absolute;left:0;right:0;top:-59px;width:100%;height:60px}
+.f-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding:70px 0 50px}
+footer .logo{color:#fff;margin-bottom:18px}
+footer .logo-t{color:#fff}
+footer .logo-t small{color:#8ea6b6}
+footer h4{color:#fff;font-size:15px;margin-bottom:16px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer a:hover{color:#fff}
+.f-bot{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.rv{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:1140px){
+  .menu{display:none}.burger{display:block}.hdr .btn{display:none}
+  .hdr.open .menu{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:#fff;padding:8px var(--g) 24px;border-bottom:1px solid var(--line);box-shadow:0 30px 40px -30px rgba(15,42,61,.4)}
+  .hdr.open .menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:18px}
+  .hdr-cta{margin-left:auto}
+  .st-grid{grid-template-columns:1fr 1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .path-line{grid-template-columns:1fr;gap:28px;max-width:520px;margin-left:auto;margin-right:auto}
+  .path-line .track{left:44px;right:auto;top:20px;bottom:20px;width:4px;height:auto}
+  .path-line .track i{width:100%!important;height:0;transition:height 2.4s}
+  .path-line.in .track i{height:100%}
+  .pt{display:grid;grid-template-columns:92px 1fr;gap:0 22px;text-align:left;align-items:start}
+  .pt .ic{grid-row:span 3;margin:0}
+  .pt .t{justify-self:start}
+  .path-foot{grid-template-columns:1fr}
+  .why-photo{height:520px;max-width:620px}
+  .svc-grid{grid-template-columns:1fr}
+  .promo-in .wrap{grid-template-columns:1fr;gap:24px;padding-top:60px;padding-bottom:60px}
+  .posts{grid-template-columns:1fr 1fr}
+  .ct-box{grid-template-columns:1fr}
+  .f-top{grid-template-columns:1fr 1fr}
+  .clients .wrap{flex-direction:column;align-items:flex-start;gap:20px}
+  .clients h4{max-width:none}
+  .marquee{width:100%}
+}
+@media (max-width:640px){
+  :root{--g:16px}
+  section{padding:80px 0}
+  .topbar{display:none}
+  .hdr .wrap{height:70px;gap:12px}
+  .hdr.open .menu{top:70px}
+  .logo .bear{width:46px}.logo-t{font-size:18px}
+  .tel{display:none}
+  .logo-t small{letter-spacing:.14em}
+  .st-grid,.cat-grid,.posts,.feats,.f-top,.r2,.sv ul{grid-template-columns:1fr}
+  .card{height:290px}
+  .card .go{opacity:1;transform:none}
+  .cat-note{grid-template-columns:1fr;text-align:left}
+  .why-photo{height:420px}
+  .why-photo .seal{width:120px;height:120px;left:12px;bottom:20px}
+  .why-photo .seal b{font-size:30px}
+  .sv .c{padding:26px}.sv .ph{height:220px}
+  .promo-in{background-attachment:scroll}
+  .geo-list span{display:none}
+  summary{font-size:16px;padding:20px}
+  details p{padding:0 20px 20px}
+  .ct-l,.ct-r{padding:30px 22px}
+}
+
+/* ===== v4: animations & modal ===== */
+.progress{position:fixed;left:0;top:0;width:100%;height:3px;z-index:300;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--sea),var(--wine))}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .75s ease}
+.btn:hover::after{left:135%}
+.btn:active{transform:scale(.97)}
+.btn-wine{animation:glow 3.5s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 14px 34px -10px rgba(156,40,53,.85)}}
+
+/* split headings */
+h2.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+h2.split .w>span{display:inline-block;transform:translateY(110%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+h2.split.in .w>span{transform:none}
+.kicker svg path{stroke-dasharray:40;stroke-dashoffset:40}
+.kicker.in svg path{animation:kd 1.2s .1s ease forwards}
+@keyframes kd{to{stroke-dashoffset:0}}
+.kicker{opacity:0;transform:translateX(-14px);transition:opacity .7s,transform .7s}
+.kicker.in{opacity:1;transform:none}
+
+/* why photos */
+.why-photo .ph{clip-path:inset(100% 0 0 0 round 24px);transition:clip-path 1.4s cubic-bezier(.75,0,.2,1)}
+.why-photo .ph img{transform:scale(1.35);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.why-photo.in .ph{clip-path:inset(0 0 0 0 round 24px)}
+.why-photo.in .ph img{transform:scale(1)}
+.why-photo .p2,.why-photo .p2 img{transition-delay:.35s}
+.why-photo.in .ph:hover img{transform:scale(1.07);transition-delay:0s;transition-duration:.9s}
+.why-photo .seal{transform:scale(0) rotate(-120deg);transition:transform 1s 1s cubic-bezier(.3,1.5,.5,1)}
+.why-photo.in .seal{transform:none}
+.why-photo .seal > div{animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.why-photo::before{content:"";position:absolute;right:6%;top:6%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--ice-2) 2px,transparent 2.5px) 0 0/14px 14px;opacity:.9;animation:fl 7s ease-in-out infinite}
+.feat .ic{transition:transform .45s cubic-bezier(.3,1.6,.5,1),background .3s,color .3s}
+.feat:hover .ic{transform:rotate(-10deg) scale(1.12);background:var(--wine);color:#fff}
+.feat{position:relative;overflow:hidden}
+.feat::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--wine),var(--salmon));transform:scaleX(0);transform-origin:0 50%;transition:transform .5s}
+.feat:hover::after{transform:scaleX(1)}
+
+/* path steps */
+.pt{opacity:0;transform:translateY(24px) scale(.92);transition:opacity .7s,transform .7s cubic-bezier(.3,1.4,.5,1)}
+.path-line.in .pt{opacity:1;transform:none}
+.path-line .pt:nth-child(2){transition-delay:.15s}.path-line .pt:nth-child(3){transition-delay:.55s}.path-line .pt:nth-child(4){transition-delay:.95s}.path-line .pt:nth-child(5){transition-delay:1.35s}.path-line .pt:nth-child(6){transition-delay:1.75s}
+.pt .ic{transition:transform .4s,background .3s,color .3s}
+.pt:hover .ic{transform:translateY(-6px);background:var(--navy);color:#fff}
+
+/* misc hovers */
+.st.rv.in{transition:transform .35s,background .35s}
+.st.rv.in:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
+.marquee:hover .mtrack{animation-play-state:paused}
+.mtrack span{transition:transform .3s,color .3s}
+.mtrack span:hover{transform:translateY(-3px);color:var(--wine)}
+.svc .wm,.ct-l .wm{animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{translate:-20px -16px;rotate:-4deg}}
+.geo-list div{transition:transform .3s,background .3s}
+.geo-list div:hover{transform:translateX(6px);background:#fff}
+.cat-note .pdf{animation:fl 4s ease-in-out infinite}
+.card .num,.card h3{transition:transform .4s}
+.card:hover h3{transform:translateY(-4px)}
+
+/* back to top */
+.totop{position:fixed;right:22px;bottom:22px;z-index:90;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -12px rgba(15,42,61,.6);opacity:0;transform:translateY(20px) scale(.8);pointer-events:none;transition:.4s}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--wine)}
+.totop svg{width:20px;height:20px;transform:rotate(-90deg)}
+
+/* modal */
+body.lock{overflow:hidden}
+.modal{position:fixed;inset:0;z-index:400;display:grid;place-items:center;padding:16px;visibility:hidden;opacity:0;transition:opacity .35s,visibility 0s .35s}
+.modal.open{visibility:visible;opacity:1;transition:opacity .35s}
+.m-ov{position:absolute;inset:0;background:rgba(9,26,39,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.m-box{position:relative;width:min(880px,100%);max-height:calc(100svh - 32px);overflow:auto;display:grid;grid-template-columns:.8fr 1.2fr;border-radius:28px;background:#fff;box-shadow:0 50px 100px -30px rgba(0,0,0,.5);transform:translateY(40px) scale(.95);transition:transform .55s cubic-bezier(.2,.9,.25,1.05)}
+.modal.open .m-box{transform:none}
+.m-side{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:40px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.m-side .bear{width:76px;color:#fff;opacity:.95}
+.m-side .big{position:absolute;right:-70px;bottom:-40px;width:300px;color:#fff;opacity:.06}
+.m-side h3{font-size:28px;margin:18px 0 10px}
+.m-side p{color:#a9bfcd;font-size:15px}
+.m-side ul{list-style:none;display:grid;gap:10px;position:relative}
+.m-side li{display:flex;gap:10px;font-size:14px;color:#dce7ee}
+.m-side li svg{width:18px;height:18px;color:#6fe0c4;flex:none;margin-top:2px}
+.m-side a{font-weight:800;font-size:18px;position:relative}
+.m-main{padding:40px 38px}
+.m-main h3{font-size:28px;color:var(--navy);margin-bottom:6px}
+.m-main > p{color:var(--muted);margin-bottom:22px;font-size:15px}
+.m-x{position:absolute;right:16px;top:16px;z-index:2;width:42px;height:42px;border-radius:50%;border:0;background:var(--ice);cursor:pointer;transition:transform .3s,background .3s}
+.m-x::before,.m-x::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:var(--navy);transform:translate(-50%,-50%) rotate(45deg)}
+.m-x::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.m-x:hover{transform:rotate(90deg);background:var(--wine-soft)}
+.modal .fi,.modal .r2,.modal .btn,.modal .cons{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.modal.open .fi,.modal.open .r2,.modal.open .btn,.modal.open .cons{opacity:1;transform:none}
+.modal.open form > :nth-child(1){transition-delay:.15s}.modal.open form > :nth-child(2){transition-delay:.22s}.modal.open form > :nth-child(3){transition-delay:.29s}.modal.open form > :nth-child(4){transition-delay:.36s}.modal.open form > :nth-child(5){transition-delay:.43s}.modal.open form > :nth-child(6){transition-delay:.5s}
+.m-done{display:none;text-align:center;padding:40px 10px}
+.m-done svg{width:96px;height:96px;margin:0 auto 20px}
+.m-done circle{fill:none;stroke:var(--mint);stroke-width:4;stroke-dasharray:283;stroke-dashoffset:283}
+.m-done path{fill:none;stroke:var(--mint);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60}
+.m-main.done form,.m-main.done > h3,.m-main.done > p{display:none}
+.m-main.done .m-done{display:block}
+.m-main.done .m-done circle{animation:draw .8s ease forwards}
+.m-main.done .m-done path{animation:draw .5s .7s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.m-done h3{font-size:28px;color:var(--navy);margin-bottom:8px}
+.m-done p{color:var(--muted);margin-bottom:24px}
+@media (max-width:760px){
+  .m-box{grid-template-columns:1fr}
+  .m-side{display:none}
+  .m-main{padding:30px 20px}
+}
+@media (prefers-reduced-motion:reduce){h2.split .w>span,.pt,.kicker,.why-photo .ph,.why-photo .seal{transform:none!important;opacity:1!important;clip-path:none!important}}
+@media (prefers-reduced-motion:reduce){.hero h1 .ln>span,.fu{transform:none!important;opacity:1!important}.hero h1 i::after{transform:none!important}.hs-ring .fg{stroke-dashoffset:0!important}}
+</style>
+</head>
+<body>
+
+<!-- icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bear" viewBox="0 0 69 55"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M31.0966 4.01819C34.8347 5.29387 37.0951 5.89265 39.0598 4.12232C41.0245 2.352 44.0151 2.49951 43.9629 3.13301C43.9629 3.13301 46.0059 1.1284 45.067 0.338694C44.1281 -0.451012 41.5288 0.234557 39.1641 1.42345C36.7995 2.61235 35.6867 3.15907 33.8524 2.29126C32.0181 1.42345 30.0099 0.998223 28.2973 1.55362C26.1935 2.23919 24.5243 5.02485 24.5243 5.02485C25.4611 4.34849 26.5458 3.90443 27.6887 3.72939C28.8315 3.55435 29.9996 3.65334 31.0966 4.01819ZM59.7761 4.66031C57.9157 5.20703 54.4383 4.70372 50.9609 2.9681C50.0375 2.46312 49.0046 2.1905 47.9517 2.17386C46.8989 2.15723 45.858 2.39707 44.9189 2.87263C44.9189 2.87263 47.2922 0.57294 48.9179 0.408056C50.7328 0.425438 52.501 0.984576 53.9949 2.01351C55.212 2.82925 58.0113 2.95074 59.3501 2.58626C60.6889 2.22178 62.219 1.83993 62.5928 2.70774C62.9666 3.57555 62.4624 6.17897 62.4624 6.17897C62.4223 5.88329 62.3143 5.60086 62.1467 5.35375C61.9792 5.10664 61.7567 4.90155 61.4966 4.75451C61.2365 4.60747 60.9459 4.52246 60.6474 4.50612C60.349 4.48978 60.0507 4.54255 59.7761 4.66031ZM60.4018 37.1511C61.2103 37.6891 63.5401 37.8453 65.0702 37.611C65.7291 37.5613 66.3667 37.3561 66.9306 37.0122C66.9306 37.0122 67.0697 39.4681 66.1047 40.5703C65.9421 40.756 65.7924 40.92 65.6557 41.0696C64.9815 41.8081 64.6268 42.1965 64.6268 43.1129C64.6268 43.7257 64.6698 44.4082 64.708 45.0143C64.7385 45.4983 64.7659 45.9336 64.7659 46.2457C64.7659 46.9487 64.5225 47.1135 64.5225 47.1135C64.5225 47.1135 60.7843 46.8358 59.6107 43.9807C58.4371 41.1256 58.6283 40.2579 58.6283 40.2579C58.6283 40.2579 61.1234 43.5382 61.871 43.1737C62.2966 42.9662 62.3475 42.3734 62.3974 41.7924C62.4351 41.3528 62.4723 40.9199 62.6708 40.6657C62.8797 40.3981 62.5326 40.1626 61.9237 39.7495C61.19 39.2518 60.0764 38.4964 59.0978 37.1164C57.3069 34.5911 56.1941 30.5991 56.4376 25.913C56.496 23.1062 57.4053 20.3831 59.0456 18.1027C59.5174 17.3566 60.0433 16.646 60.6191 15.9766C60.6191 15.9766 60.5583 16.02 59.6889 15.1088L59.2803 15.2563C58.2894 15.3277 57.3171 15.5623 56.4028 15.9506C55.916 16.1849 55.3248 16.4973 54.4554 16.9919C53.7475 18.4304 53.2247 19.9524 52.8993 21.5219C52.0387 25.5572 54.1599 32.0397 55.4204 34.4696C56.2204 35.9717 57.3826 37.2512 58.8022 38.1925L58.5588 38.8346C58.4188 39.2603 58.4188 39.7194 58.5588 40.145L57.6894 39.0256C57.0464 38.1202 56.3091 37.2853 55.49 36.535C55.2465 36.4829 55.4117 37.6891 55.4117 37.6891C55.0924 37.5303 54.8146 37.2994 54.6003 37.0147C54.386 36.73 54.2412 36.3993 54.1773 36.049C53.9261 35.2552 53.8085 34.4253 53.8295 33.5931C53.6463 32.8826 53.396 32.191 53.0819 31.5277C52.4453 29.57 51.9256 27.5763 51.5257 25.5572C51.2736 24.0559 50.6825 23.9951 50.6564 24.3249C50.6451 24.4678 50.8754 25.256 51.116 26.0794C51.4306 27.1562 51.7628 28.2931 51.5953 28.1259C51.2997 27.8308 49.1003 23.5525 49.4219 22.6674C49.6321 22.0889 50.5514 21.114 51.2166 20.4084C51.5694 20.0343 51.8507 19.736 51.9169 19.6127C51.9536 19.5355 52.0036 19.3897 52.0759 19.1789L52.0759 19.1788L52.076 19.1784C52.1581 18.9393 52.2688 18.6166 52.4212 18.2155C51.3953 18.849 50.1522 19.6561 48.596 20.6801C43.9798 23.7435 43.2235 26.2254 43.2235 26.2254C42.7024 24.244 43.3365 23.0799 43.9289 21.9924C44.1668 21.5557 44.3979 21.1314 44.5449 20.6714C45.0578 19.066 44.2667 15.7249 44.1884 15.4038C44.9847 16.2762 46.0667 16.8363 47.2398 16.9832C49.0465 17.2632 50.8955 16.9591 52.5168 16.1154L53.0645 15.8377L53.7513 15.4906C54.4467 15.1869 55.2205 14.8745 55.8812 14.6228C56.8635 14.241 57.6199 13.9806 57.6199 13.9806C57.3374 13.805 57.0825 13.5886 56.8635 13.3384C56.5395 12.9774 56.3333 12.5264 56.2724 12.0454C56.2685 12.0137 56.2685 11.9816 56.2724 11.9499C56.281 11.5762 56.3747 11.2093 56.5464 10.877C56.7181 10.5447 56.9634 10.2558 57.2635 10.0321H57.22L57.4373 9.86721C57.8906 9.49636 58.3667 9.15435 58.863 8.8432L59.0456 8.73038C59.6659 8.27785 60.3406 7.90468 61.0538 7.61959C61.3792 7.54541 61.6792 7.38678 61.9234 7.15973C62.1677 6.93268 62.3475 6.64527 62.4447 6.32657C62.4614 6.6156 62.4614 6.90534 62.4447 7.19437L62.9316 6.97742C66.2786 5.55422 68.2433 5.77116 68.2433 5.77116C67.7981 6.33558 67.4107 6.9432 67.0871 7.58487C66.5481 8.66095 65.8787 10.1015 65.8787 10.1015L64.0878 11.4987L65.983 6.85592C64.9043 7.18405 63.8705 7.64463 62.9055 8.22707L62.7751 8.29648C62.7389 8.31859 62.7021 8.3407 62.6651 8.36302C62.5421 8.43709 62.4152 8.51353 62.2883 8.60022C61.9579 8.80849 61.5928 9.04281 61.245 9.28579C60.8973 9.52878 60.5496 9.79779 60.1845 10.0928L59.9324 10.3098C59.7696 10.4317 59.6068 10.5694 59.4399 10.7106L59.4398 10.7106C59.3928 10.7504 59.3455 10.7904 59.2977 10.8305C58.8717 11.2123 58.4632 11.5941 58.0806 11.976C58.7376 12.1841 59.4181 12.3095 60.1062 12.3492C60.7501 12.2815 61.3678 12.0581 61.9057 11.6983C61.9057 11.6983 61.9579 12.5748 61.9579 13.512C61.9573 13.5929 61.9395 13.6728 61.9057 13.7463C62.005 13.7148 62.101 13.6742 62.1926 13.6248C63.1114 13.1109 63.8881 12.3774 64.4529 11.49C65.5204 10.8651 66.4516 10.033 67.1914 9.04281C67.9197 7.99229 68.5264 6.86271 68.9997 5.67571C68.7364 7.03673 68.3554 8.37238 67.8608 9.66763C67.1765 11.4155 66.2328 13.0508 65.0615 14.5187C64.5753 15.1599 64.1132 15.7539 63.6864 16.3025L63.6864 16.3026L63.6864 16.3026C62.2129 18.1968 61.1595 19.5508 60.9842 20.4458C60.8216 21.2765 60.9966 22.1791 61.1562 23.0016C61.2183 23.3219 61.278 23.63 61.3146 23.917C61.4052 24.4145 61.3594 24.9273 61.1818 25.4009C61.0043 25.8745 60.7017 26.2913 60.3062 26.6072C59.8803 26.8937 59.391 27.0724 58.8804 27.1279C58.8804 27.1279 60.4539 25.9477 60.2105 24.8022C59.9671 23.6567 59.4803 23.7695 59.289 23.8736C59.0977 23.9778 58.0893 26.9196 58.2806 30.5124C58.4718 34.1051 59.5933 36.6131 60.4018 37.1511ZM47.5794 43.5207C47.5794 43.5207 47.5794 49.7343 53.1867 52.1988C58.794 54.646 66.0096 54.3163 66.0096 54.3163C66.0096 54.3163 57.064 56.4685 49.0921 53.1361C41.1201 49.8037 41.52 47.6428 41.52 47.6428C41.52 47.6428 19.8733 46.0721 0 51.5653C0 51.5653 3.90337 50.1942 10.4322 48.6235C7.87117 42.8069 6.24015 36.6253 5.5986 30.3041C4.41629 19.1614 12.4838 12.8698 16.0308 10.6135C19.1072 8.47956 22.051 6.16114 24.8459 3.67102C24.8459 3.67102 23.8027 5.09423 23.1072 6.27445C22.1732 7.86863 21.4955 9.59927 21.099 11.4032C20.8991 12.9305 18.6475 15.829 18.6475 15.829C17.5173 15.3082 16.2718 15.0871 15.031 15.1868C13.2575 15.4298 8.13707 19.3523 7.85019 27.8048C7.572 35.6497 12.6403 46.454 13.3619 47.9553L14.4051 47.7209L15.2222 46.1242C15.5432 44.3389 15.5785 42.5141 15.3266 40.7177C14.8171 38.2815 14.6997 35.7798 14.9789 33.3067C15.0822 31.607 15.5887 29.9562 16.4568 28.4903C15.8218 31.4071 15.6052 34.3991 15.8134 37.3767C16.2568 41.5508 19.8037 46.4192 19.8037 46.4192L19.8993 46.6362C22.4291 46.1849 25.1415 45.751 28.0191 45.3779L29.4796 45.1956L27.7409 39.5896C29.0283 39.3413 30.2827 38.9453 31.4791 38.4094C32.9048 37.6891 33.5047 37.1597 33.5829 36.8213C33.5989 36.7524 33.627 36.6223 33.6653 36.4456C33.8152 35.7541 34.1199 34.3476 34.4523 33.0897C35.0383 31.2915 35.8318 29.5674 36.8169 27.9523C36.0861 30.6752 35.5057 33.4361 35.0782 36.2225C34.9043 38.0622 34.6001 42.3405 34.4436 44.5795C37.2255 44.2584 39.451 44.0327 41.1897 43.8679C41.2068 43.7954 41.2245 43.7207 41.2427 43.6438C41.5291 42.4325 41.947 40.6647 42.5111 37.9147C42.8725 36.1053 43.2064 34.6032 43.4941 33.3084C44.12 30.4922 44.528 28.6566 44.528 26.7721C44.528 24.0211 45.5104 23.8302 45.5104 23.8302C45.5104 23.8302 45.9537 28.985 45.9537 30.6512C45.9537 31.9759 45.3328 34.3264 44.5583 37.2578C44.3587 38.0135 44.1489 38.8077 43.9368 39.633C43.45 41.5335 43.1718 42.8439 43.0153 43.7117C44.5305 43.5437 46.0555 43.48 47.5794 43.5207Z"/></symbol>
+    <symbol id="i-ar" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ard" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".18"/><path d="M7.5 12.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4.5l3.5 3.5V16h-8"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></g></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2v20M4 7l16 10M20 7L4 17M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 13h7M9 17h5"/></g></symbol>
+    <symbol id="i-therm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M10 14.5V4a2 2 0 014 0v10.5a4 4 0 11-4 0z"/><path d="M12 9v7"/></g></symbol>
+    <symbol id="i-hook" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14c3-4 7-4 10 0s7 4 10 0"/><path d="M2 19c3-4 7-4 10 0s7 4 10 0"/><path d="M12 3v7"/><circle cx="12" cy="3" r="1"/></g></symbol>
+    <symbol id="i-knife" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l9-9M14 4l6 6-5 2-3-3z"/><path d="M12 12l-2-2"/></g></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></g></symbol>
+    <symbol id="i-chef" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13a4 4 0 01-.5-8A5 5 0 0112 2a5 5 0 016.5 3A4 4 0 0118 13v7H6z"/><path d="M6 17h12"/></g></symbol>
+    <symbol id="i-fish" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c3-5 10-6 15 0-5 6-12 5-15 0z"/><path d="M17 12l5-4v8z"/><circle cx="7" cy="11" r=".8" fill="currentColor"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 9 11 4 20 4c0 9-5 15-15 15z"/><path d="M5 19L13 11"/></g></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V5.5a1.5 1.5 0 013 0V12M11 11V4a1.5 1.5 0 013 0v7M14 11V5.5a1.5 1.5 0 013 0V14c0 4-3 7-7 7-3 0-5-2-6-4l-2-4a1.5 1.5 0 012.6-1.5L8 14"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="wave-k" viewBox="0 0 26 10"><path d="M1 5c3-4 5-4 8 0s5 4 8 0 5-4 8 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <pattern id="topo" width="240" height="120" patternUnits="userSpaceOnUse">
+      <path d="M0 20c40-16 80-16 120 0s80 16 120 0M0 50c40-16 80-16 120 0s80 16 120 0M0 80c40-16 80-16 120 0s80 16 120 0M0 110c40-16 80-16 120 0s80 16 120 0" fill="none" stroke="#c9dbe5" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><i class="dot"></i>Принимаем заказы: <b>Пн–Пт, 07:00–18:00</b></span>
+    <span>Санкт-Петербург и Ленинградская область · <a href="mailto:zkz@nordwave.ru"><b>zkz@nordwave.ru</b></a></span>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Северная Волна — на главную">
+      <svg class="bear" viewBox="0 0 69 55"><use href="#bear"/></svg>
+      <span class="logo-t">Северная Волна<small>Производственная компания</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#catalog">Каталог</a>
+      <a href="#path">Как мы работаем</a>
+      <a href="#services">Услуги</a>
+      <a href="#geo">Доставка</a>
+      <a href="#blog">Статьи</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="tel" href="tel:+79111489999">+7 (911) 148-99-99<small>Отдел продаж</small></a>
+      <a class="btn btn-wine" href="#contacts" data-modal>Оставить заявку</a>
+      <button class="burger" id="burger" aria-label="Меню"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" data-speed="-0.18">
+    <picture>
+      <source media="(max-width:700px)" srcset="https://nordwave.ru/wp-content/uploads/2023/12/slide_mobile.jpg.webp">
+      <img src="https://nordwave.ru/wp-content/uploads/2023/12/slide.jpg.webp" alt="Филе лосося с лимоном на фоне моря" onerror="this.style.display='none'">
+    </picture>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <div class="badge fu d1"><b>С 2008</b>Производство в Ленинградской области</div>
+        <h1>
+          <span class="ln"><span>Свежая рыба</span></span>
+          <span class="ln"><span>для <i>лучших кухонь</i></span></span>
+          <span class="ln"><span>Петербурга</span></span>
+        </h1>
+        <p class="sub fu d2">Производим, упаковываем и доставляем филе, рыбу слабой соли и копчения, икру и морепродукты. Под ваши техкарты — в день заказа.</p>
+        <div class="hero-act fu d3">
+          <a class="btn btn-wine" href="#contacts" data-modal>Оставить заявку <svg><use href="#i-ar"/></svg></a>
+          <a class="btn btn-glass" href="#catalog">Смотреть каталог</a>
+        </div>
+      </div>
+      <aside class="hero-side fu d4">
+        <div class="hs-top">
+          <svg class="hs-ring" viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="34"/><circle class="fg" cx="40" cy="40" r="34"/><text x="40" y="45" text-anchor="middle">24 ч</text></svg>
+          <div><b>От вылова до кухни</b><span>охлаждённая рыба не старше суток</span></div>
+        </div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Доставка в день заказа</li>
+          <li><svg><use href="#i-check"/></svg>Термоконтроль в пути</li>
+          <li><svg><use href="#i-check"/></svg>Ветсопровождение партии</li>
+        </ul>
+        <div class="hs-live"><i class="dot"></i>Принимаем заказы Пн–Пт, 07:00–18:00</div>
+      </aside>
+    </div>
+    <div class="hero-bar fu d5">
+      <div><svg><use href="#i-fish"/></svg>Собственное<br>производство</div>
+      <div><svg><use href="#i-hand"/></svg>Ручная разделка<br>и посол</div>
+      <div><svg><use href="#i-leaf"/></svg>Без химических<br>консервантов</div>
+      <div><svg><use href="#i-doc"/></svg>Полный пакет<br>документов</div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#stats" aria-label="Листать вниз"></a>
+  <div class="hero-waves" aria-hidden="true">
+    <svg class="wv w1" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 50C240 10 480 10 720 50S1200 90 1440 50S1920 10 2160 50S2640 90 2880 50V100H0Z"/></svg>
+    <svg class="wv w2" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 50C240 10 480 10 720 50S1200 90 1440 50S1920 10 2160 50S2640 90 2880 50V100H0Z"/></svg>
+    <svg class="wv w3" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 50C240 10 480 10 720 50S1200 90 1440 50S1920 10 2160 50S2640 90 2880 50V100H0Z"/></svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <svg class="wm bear" viewBox="0 0 69 55" aria-hidden="true"><use href="#bear"/></svg>
+  <div class="wrap st-grid">
+    <div class="st rv">
+      <div class="num"><span data-count="1000">0</span><small>+ т</small></div>
+      <p>продукции производим и поставляем ежегодно</p>
+      <div class="viz"><svg viewBox="0 0 200 46" preserveAspectRatio="none"><path class="spark" d="M0 40 C20 38 30 30 50 32 S80 22 100 24 S130 12 150 14 S180 4 200 2"/></svg></div>
+    </div>
+    <div class="st rv">
+      <div class="num"><span data-count="500">0</span><small>+</small></div>
+      <p>клиентов — рестораны, отели, магазины, сети</p>
+      <div class="viz dots" id="dots"></div>
+    </div>
+    <div class="st rv">
+      <div class="num"><span data-count="18">0</span><small>лет</small></div>
+      <p>на рынке Санкт-Петербурга, с 2008 года</p>
+      <div class="viz yrs" id="yrs"></div>
+    </div>
+    <div class="st rv">
+      <div class="num"><span data-count="24">0</span><small>часа</small></div>
+      <p>максимум от вылова до поставки охлаждённой рыбы</p>
+      <div class="viz clock"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="17" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="4"/><circle cx="21" cy="21" r="17" fill="none" stroke="#ef8a6b" stroke-width="4" stroke-dasharray="107 107" stroke-linecap="round" transform="rotate(-90 21 21)"/><path d="M21 12v9l6 4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span>Свежесть, которую<br>видно на срезе</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<div class="clients">
+  <div class="wrap">
+    <h4>Нам доверяют лучшие рестораны и сети города</h4>
+    <div class="marquee"><div class="mtrack">
+      <span>Астория</span><span>Европа</span><span>Советская</span><span>Sokotel</span><span>Semishagoff</span><span>Менахем</span><span>Sushi Wok</span><span>SushiShop</span>
+      <span>Астория</span><span>Европа</span><span>Советская</span><span>Sokotel</span><span>Semishagoff</span><span>Менахем</span><span>Sushi Wok</span><span>SushiShop</span>
+    </div></div>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="wrap">
+    <div class="cat-head">
+      <div>
+        <div class="kicker"><svg><use href="#wave-k"/></svg>Каталог продукции</div>
+        <h2>Всё для рыбного <i>раздела</i> меню</h2>
+      </div>
+      <a class="btn btn-out" href="#">Весь каталог <svg><use href="#i-ar"/></svg></a>
+    </div>
+    <div class="cat-grid">
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog1.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">01</span><div class="body"><div><h3>Филе охлаждённое</h3><p>Лосось, форель, треска, судак</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog2.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">02</span><div class="body"><div><h3>Филе замороженное</h3><p>Шоковая заморозка, вакуум</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog3.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">03</span><div class="body"><div><h3>Рыба слабосолёная</h3><p>Ручной посол без консервантов</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog4.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">04</span><div class="body"><div><h3>Холодного копчения</h3><p>Натуральный дым</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog5.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">05</span><div class="body"><div><h3>Горячего копчения</h3><p>Собственная коптильня</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog6.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">06</span><div class="body"><div><h3>Пресервы из сельди</h3><p>Филе сельди в заливках</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog7.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">07</span><div class="body"><div><h3>Морепродукты</h3><p>Креветки, мидии, кальмар</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog8.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">08</span><div class="body"><div><h3>Икра</h3><p>Красная икра и деликатесы</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+      <a class="card rv" href="#"><img src="https://nordwave.ru/wp-content/uploads/2023/12/catalog9.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="num">09</span><div class="body"><div><h3>Паназиатская кухня</h3><p>Соусы, нори, имбирь, васаби</p></div><span class="go"><svg><use href="#i-ard"/></svg></span></div></a>
+    </div>
+    <div class="cat-note rv">
+      <span class="pdf"><svg><use href="#i-chef"/></svg></span>
+      <div><b>Не нашли нужную позицию?</b><span>Подберём ассортимент под ваше меню или сделаем продукт по вашему ТЗ.</span></div>
+      <a class="btn btn-wine" href="#contacts" data-modal>Оставить заявку <svg><use href="#i-ar"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- PATH infographic -->
+<section class="path" id="path">
+  <svg class="topo" aria-hidden="true"><rect width="100%" height="100%" fill="url(#topo)"/></svg>
+  <div class="wrap center" style="position:relative">
+    <div class="kicker"><svg><use href="#wave-k"/></svg>Путь продукта</div>
+    <h2>От моря до вашей кухни — <i>за сутки</i></h2>
+    <p class="lead">Контролируем каждый этап сами: от закупки сырья до передачи заказа на вашу кухню.</p>
+    <div class="path-line" id="pathline">
+      <div class="track"><i></i></div>
+      <div class="pt"><div class="ic"><svg><use href="#i-hook"/></svg></div><span class="t">ЭТАП 1</span><h3>Закупка сырья</h3><p>Свежий улов от проверенных хозяйств</p></div>
+      <div class="pt"><div class="ic"><svg><use href="#i-knife"/></svg></div><span class="t">ЭТАП 2</span><h3>Ручная разделка</h3><p>Филетирование и нарезка под техкарту</p></div>
+      <div class="pt"><div class="ic"><svg><use href="#i-fish"/></svg></div><span class="t">ЭТАП 3</span><h3>Посол и копчение</h3><p>Только соль, натуральный дым и холод</p></div>
+      <div class="pt"><div class="ic"><svg><use href="#i-box"/></svg></div><span class="t">ЭТАП 4</span><h3>Упаковка</h3><p>Вакуум, маркировка, документы</p></div>
+      <div class="pt"><div class="ic"><svg><use href="#i-truck"/></svg></div><span class="t">ЭТАП 5</span><h3>Доставка</h3><p>В день заказа с термоконтролем</p></div>
+    </div>
+    <div class="path-foot">
+      <div class="pf rv"><span class="ic"><svg><use href="#i-therm"/></svg></span><div><b>Термоконтроль</b><span>Рефрижераторы на всём пути</span></div></div>
+      <div class="pf rv"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><b>Ветсопровождение</b><span>Документы к каждой партии</span></div></div>
+      <div class="pf rv"><span class="ic"><svg><use href="#i-check"/></svg></span><div><b>Полный пакет</b><span>Договор, счёт, накладные</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="wrap why-grid">
+    <div class="why-photo rv">
+      <div class="ph p1" data-speed="0.05"><img src="https://nordwave.ru/wp-content/uploads/2023/12/company1.jpg.webp" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph p2" data-speed="-0.08"><img src="https://nordwave.ru/wp-content/uploads/2023/12/company2.jpg.webp" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="seal">
+        <svg class="txt" viewBox="0 0 100 100"><defs><path id="circ" d="M50 50m-38 0a38 38 0 1176 0a38 38 0 11-76 0"/></defs><text font-size="9.5" font-weight="700" letter-spacing="2.4" fill="#fff" font-family="Manrope,sans-serif"><textPath href="#circ">СЕВЕРНАЯ ВОЛНА · КАЧЕСТВО · </textPath></text></svg>
+        <div><small>С</small><b>2008</b><small>ГОДА</small></div>
+      </div>
+    </div>
+    <div>
+      <div class="kicker"><svg><use href="#wave-k"/></svg>Почему мы</div>
+      <h2>Качество, которое <i>видно</i> на срезе</h2>
+      <p class="lead">Шесть причин, по которым шефы и закупщики работают с нами годами.</p>
+      <div class="feats">
+        <div class="feat rv"><span class="ic"><svg><use href="#i-truck"/></svg></span><h3>Доставка в день заказа</h3><p>Собственный транспорт с рефрижераторами.</p></div>
+        <div class="feat rv"><span class="ic"><svg><use href="#i-chef"/></svg></span><h3>Под ваши техкарты</h3><p>Нарезка, порции, свои рецептуры.</p></div>
+        <div class="feat rv"><span class="ic"><svg><use href="#i-cal"/></svg></span><h3>Работаем с 2008 года</h3><p>Почти 20 лет на рынке Петербурга.</p></div>
+        <div class="feat rv"><span class="ic"><svg><use href="#i-layers"/></svg></span><h3>Не только рыба</h3><p>Икра, морепродукты, салаты, паназия.</p></div>
+        <div class="feat rv"><span class="ic"><svg><use href="#i-leaf"/></svg></span><h3>Без химии</h3><p>Никаких химических консервантов.</p></div>
+        <div class="feat rv"><span class="ic"><svg><use href="#i-hand"/></svg></span><h3>Ручная работа</h3><p>Разделка и посол руками мастеров.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="svc" id="services">
+  <svg class="wm bear" viewBox="0 0 69 55" aria-hidden="true"><use href="#bear"/></svg>
+  <div class="wrap" style="position:relative">
+    <div class="kicker"><svg><use href="#wave-k"/></svg>Услуги</div>
+    <h2>Наш цех — <i>ваше</i> производство</h2>
+    <p class="lead">Перерабатываем ваше сырьё или выпускаем продукт по вашему ТЗ — от разделки до готовой упаковки.</p>
+    <div class="svc-grid">
+      <div class="sv rv">
+        <div class="ph"><img src="https://nordwave.ru/wp-content/uploads/2023/12/services1.jpg" alt="" loading="lazy" onerror="this.remove()"><b>УСЛУГА 01</b></div>
+        <div class="c">
+          <h3>Переработка рыбы</h3>
+          <p>Принимаем ваше сырьё и превращаем его в готовый к работе продукт.</p>
+          <ul><li><svg><use href="#i-check"/></svg>Разделка и филетирование</li><li><svg><use href="#i-check"/></svg>Порционирование</li><li><svg><use href="#i-check"/></svg>Посол и копчение</li><li><svg><use href="#i-check"/></svg>Вакуум и заморозка</li></ul>
+          <a class="btn btn-white" href="#contacts" data-modal>Обсудить объём <svg><use href="#i-ar"/></svg></a>
+        </div>
+      </div>
+      <div class="sv rv">
+        <div class="ph"><img src="https://nordwave.ru/wp-content/uploads/2023/12/services2.jpg" alt="" loading="lazy" onerror="this.remove()"><b>УСЛУГА 02</b></div>
+        <div class="c">
+          <h3>Изготовление рыбопродукции</h3>
+          <p>Разработаем и произведём продукт по вашему ТЗ или рецептуре.</p>
+          <ul><li><svg><use href="#i-check"/></svg>Индивидуальные рецептуры</li><li><svg><use href="#i-check"/></svg>Под вашей маркой</li><li><svg><use href="#i-check"/></svg>Пробная партия</li><li><svg><use href="#i-check"/></svg>Нестандартные запросы</li></ul>
+          <a class="btn btn-white" href="#contacts" data-modal>Отправить ТЗ <svg><use href="#i-ar"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo">
+  <div class="promo-in" style="--pbg:url('https://nordwave.ru/wp-content/uploads/2023/12/parallax.jpg')">
+    <div class="wrap">
+      <div class="big10">−10%<span>−10%</span></div>
+      <div>
+        <h2>Скидка на первый заказ свежей рыбы</h2>
+        <p>Попробуйте качество «Северной Волны» на своей кухне — с выгодой.</p>
+        <small>Условия акции уточняйте у менеджера</small>
+      </div>
+      <a class="btn btn-white" href="#contacts" data-modal>Сделать заказ <svg><use href="#i-ar"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- GEO -->
+<section id="geo">
+  <div class="wrap geo-grid">
+    <div>
+      <div class="kicker"><svg><use href="#wave-k"/></svg>География</div>
+      <h2>Доставляем по Петербургу <i>и области</i></h2>
+      <p class="lead">Производство в г.п. им. Свердлова — рядом с городом, поэтому рыба приезжает к вам быстро и в нужной температуре.</p>
+      <div class="geo-list">
+        <div class="rv"><i style="border-color:#9c2835"></i><b>Производство</b><span>г.п. им. Свердлова</span></div>
+        <div class="rv"><i style="border-color:#2c7fb0"></i><b>Санкт-Петербург</b><span>доставка в день заказа</span></div>
+        <div class="rv"><i style="border-color:#37b39a"></i><b>Ленинградская область</b><span>по согласованию</span></div>
+        <div class="rv"><i style="border-color:#ef8a6b"></i><b>Регионы России</b><span>работаем по запросу</span></div>
+      </div>
+    </div>
+    <div class="map rv">
+      <svg viewBox="0 0 520 470" aria-label="Схема доставки">
+        <rect width="520" height="470" fill="url(#topo)" opacity=".7"/>
+        <!-- gulf -->
+        <path d="M0 150 C60 160 110 190 150 215 C175 230 190 238 205 236 L205 260 C180 262 150 270 110 285 C70 300 30 300 0 296Z" fill="#cfe3ee"/>
+        <!-- Neva -->
+        <path d="M205 246 C240 244 262 230 285 238 C310 247 318 275 345 282 C372 289 392 270 420 280 C445 289 470 300 520 296" fill="none" stroke="#a9cde0" stroke-width="10" stroke-linecap="round"/>
+        <!-- zones -->
+        <circle cx="250" cy="236" r="190" fill="#37b39a" opacity=".06" stroke="#37b39a" stroke-opacity=".3" stroke-dasharray="4 6"/>
+        <circle cx="250" cy="236" r="110" fill="#2c7fb0" opacity=".07" stroke="#2c7fb0" stroke-opacity=".35" stroke-dasharray="4 6"/>
+        <!-- routes -->
+        <path class="route" d="M398 280 C360 250 320 240 250 236"/>
+        <path class="route" d="M398 280 C360 200 310 170 270 150"/>
+        <path class="route" d="M398 280 C350 320 300 340 240 330"/>
+        <path class="route" d="M398 280 C330 280 260 290 190 300" style="animation-delay:-.4s"/>
+        <!-- spb -->
+        <circle cx="250" cy="236" r="10" fill="#2c7fb0" class="pulse"/>
+        <circle cx="250" cy="236" r="8" fill="#2c7fb0" stroke="#fff" stroke-width="3"/>
+        <text x="250" y="212" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="17" fill="#0f2a3d">Санкт-Петербург</text>
+        <!-- clients dots -->
+        <g fill="#0f2a3d"><circle cx="270" cy="150" r="5"/><circle cx="240" cy="330" r="5"/><circle cx="190" cy="300" r="5"/><circle cx="320" cy="205" r="4"/><circle cx="215" cy="190" r="4"/><circle cx="290" cy="290" r="4"/><circle cx="330" cy="160" r="4"/><circle cx="160" cy="200" r="4"/></g>
+        <!-- production -->
+        <circle cx="398" cy="280" r="14" fill="#9c2835" class="pulse"/>
+        <g transform="translate(374 250)"><rect width="48" height="40" rx="12" fill="#9c2835"/><svg x="8" y="7" width="32" height="26" viewBox="0 0 69 55"><use href="#bear" style="color:#fff"/></svg></g>
+        <text x="398" y="318" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="13" fill="#9c2835">Производство</text>
+        <text x="398" y="334" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="600" font-size="11" fill="#5f707c">г.п. им. Свердлова</text>
+        <text x="60" y="235" font-family="Manrope,sans-serif" font-style="italic" font-size="12" fill="#6d97ad">Финский залив</text>
+      </svg>
+      <div class="legend">Схема · точки — клиенты</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="kicker"><svg><use href="#wave-k"/></svg>Вопросы и ответы</div>
+      <h2>Частые <i>вопросы</i></h2>
+      <div class="faq-card">
+        <svg class="bear" viewBox="0 0 69 55" aria-hidden="true"><use href="#bear"/></svg>
+        <b>Не нашли ответ?</b>
+        <p>Позвоните — менеджер ответит на любые вопросы о продукции и условиях.</p>
+        <a class="btn btn-wine" href="tel:+79111489999">+7 (911) 148-99-99</a>
+      </div>
+    </div>
+    <div>
+      <details open><summary>Насколько свежая рыба?<i></i></summary><p>Охлаждённая рыба выловлена не более чем за 24 часа до поставки. Каждая партия сопровождается ветеринарными документами.</p></details>
+      <details><summary>С кем вы работаете?<i></i></summary><p>С ресторанами, отелями, кафе, магазинами, суши-сетями и дистрибьюторами Санкт-Петербурга и Ленинградской области. Работаем и с другими регионами России.</p></details>
+      <details><summary>Почему цены выше рыночных?<i></i></summary><p>В цену входит комплекс услуг: ручная разделка, доставка с термоконтролем, ветсопровождение и отсутствие химических консервантов.</p></details>
+      <details><summary>Как обеспечивается безопасность сделки?<i></i></summary><p>Работаем по договору поставки и предоставляем полный пакет документов: счёт, накладные, ветеринарные сопроводительные документы.</p></details>
+      <details><summary>Какой объём вы можете поставить?<i></i></summary><p>Производим более 1 000 тонн продукции в год — от одного ресторана до федеральной сети.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="cat-head" style="margin-bottom:0">
+      <div><div class="kicker"><svg><use href="#wave-k"/></svg>Полезное</div><h2>Статьи для шефов <i>и закупщиков</i></h2></div>
+      <a class="btn btn-out" href="#">Все статьи <svg><use href="#i-ar"/></svg></a>
+    </div>
+    <div class="posts">
+      <a class="post rv" href="#"><div class="ph"><img src="https://nordwave.ru/wp-content/uploads/2026/09/Svezhie-moreprodukty-u-gavani.webp" alt="" loading="lazy" onerror="this.remove()"></div><div class="c"><time>12 октября 2026</time><h3>Как выбрать надёжного поставщика рыбы и морепродуктов</h3><span>Читать →</span></div></a>
+      <a class="post rv" href="#"><div class="ph"><img src="https://nordwave.ru/wp-content/uploads/2026/09/KHolodnoe-i-goryachee-kopchenie-ryby.webp" alt="" loading="lazy" onerror="this.remove()"></div><div class="c"><time>12 октября 2026</time><h3>Холодное и горячее копчение рыбы: в чём разница</h3><span>Читать →</span></div></a>
+      <a class="post rv" href="#"><div class="ph"><img src="https://nordwave.ru/wp-content/uploads/2026/09/Svezhaya-i-zamorozhennaya-ryba_-kontrast-tekstur.webp" alt="" loading="lazy" onerror="this.remove()"></div><div class="c"><time>12 октября 2026</time><h3>Охлаждённая или замороженная рыба: что выбрать</h3><span>Читать →</span></div></a>
+      <a class="post rv" href="#"><div class="ph"><img src="https://nordwave.ru/wp-content/uploads/2026/09/Svezhaya-rybnaya-fileyka-s-limonom-i-travami.webp" alt="" loading="lazy" onerror="this.remove()"></div><div class="c"><time>25 сентября 2026</time><h3>Как выбрать качественное рыбное филе</h3><span>Читать →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacts">
+  <div class="wrap">
+    <div class="ct-box rv">
+      <div class="ct-l">
+        <svg class="wm bear" viewBox="0 0 69 55" aria-hidden="true"><use href="#bear"/></svg>
+        <div class="kicker" style="color:var(--salmon)"><svg><use href="#wave-k"/></svg>Контакты</div>
+        <h2>Давайте <i>работать</i> вместе</h2>
+        <p>Ответим на вопросы и подберём ассортимент под ваше меню.</p>
+        <a class="ci" href="tel:+79111489999"><span class="ic"><svg><use href="#i-phone"/></svg></span><div><small>Телефон</small><b>+7 (911) 148-99-99</b></div></a>
+        <a class="ci" href="mailto:zkz@nordwave.ru"><span class="ic"><svg><use href="#i-mail"/></svg></span><div><small>Почта для заказов</small><b>zkz@nordwave.ru</b></div></a>
+        <div class="ci"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><small>Режим работы</small><b>Пн–Пт, 07:00–18:00</b></div></div>
+        <div class="ci"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><small>Производство</small><b>188682, Ленинградская обл., Всеволожский р-н, г.п. им. Свердлова, мкр. 1, д. 15-и</b></div></div>
+      </div>
+      <div class="ct-r">
+        <h3>Оставьте заявку</h3>
+        <p>Менеджер свяжется с вами в рабочее время.</p>
+        <form id="lead">
+          <div class="fi"><label>Что вас интересует</label>
+            <div class="chips">
+              <label><input type="radio" name="topic" value="Консультация" checked><span>Консультация</span></label>
+              <label><input type="radio" name="topic" value="Заказ"><span>Заказ</span></label>
+              <label><input type="radio" name="topic" value="Переработка"><span>Переработка / ТЗ</span></label>
+              <label><input type="radio" name="topic" value="Предложение"><span>Предложение</span></label>
+            </div>
+          </div>
+          <div class="r2">
+            <div class="fi"><label for="f1">Имя</label><input id="f1" name="name" placeholder="Как к вам обращаться" required></div>
+            <div class="fi"><label for="f2">Телефон</label><input id="f2" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
+          </div>
+          <div class="fi"><label for="f3">Компания</label><input id="f3" name="company" placeholder="Ресторан, магазин, сеть…"></div>
+          <div class="fi"><label for="f4">Комментарий</label><textarea id="f4" name="msg" placeholder="Позиции, объёмы, периодичность"></textarea></div>
+          <button class="btn btn-wine" type="submit">Отправить заявку <svg><use href="#i-ar"/></svg></button>
+          <p class="cons">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
+          <div class="ok" id="ok">Спасибо! Заявка отправлена — скоро свяжемся с вами.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c120-26 240-26 360 0s240 26 360 0 240-26 360 0 240 26 360 0v30H0z" fill="#0a1e2c"/></svg>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a href="#" class="logo"><svg class="bear" viewBox="0 0 69 55" style="color:#fff"><use href="#bear"/></svg><span class="logo-t">Северная Волна<small>Производственная компания</small></span></a>
+        <p>Производство и поставка свежей рыбы и морепродуктов для бизнеса Санкт-Петербурга с 2008 года.</p>
+      </div>
+      <div><h4>Каталог</h4><ul><li><a href="#">Рыба</a></li><li><a href="#">Икра</a></li><li><a href="#">Морепродукты</a></li><li><a href="#">Морская капуста</a></li><li><a href="#">Паназиатская кухня</a></li></ul></div>
+      <div><h4>Компания</h4><ul><li><a href="#services">Услуги</a></li><li><a href="#">О нас</a></li><li><a href="#blog">Статьи</a></li><li><a href="#contacts">Контакты</a></li></ul></div>
+      <div><h4>Реквизиты</h4><ul><li>ООО «ПК «Северная Волна»</li><li>ИНН 4703154611</li><li>КПП 470301001</li><li>ОГРН 1184704002878</li></ul></div>
+    </div>
+    <div class="f-bot"><span>© 2008–2026 ООО «ПК «Северная Волна»</span><a href="#">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const hdr=document.getElementById('hdr');
+  const sc=()=>hdr.classList.toggle('sc',scrollY>10);addEventListener('scroll',sc,{passive:true});sc();
+  document.getElementById('burger').onclick=()=>hdr.classList.toggle('open');
+  document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>hdr.classList.remove('open'));
+
+  // dots graphic (50 dots = 500 clients)
+  const d=document.getElementById('dots');for(let i=0;i<50;i++){const e=document.createElement('i');d.appendChild(e)}
+  // years bars 2008-2026
+  const y=document.getElementById('yrs');for(let i=0;i<19;i++){const e=document.createElement('i');e.style.setProperty('--h',(18+i*4.5)+'%');e.style.transitionDelay=(i*40)+'ms';y.appendChild(e)}
+
+  const count=el=>{const t=+el.dataset.count,dur=1600,s=performance.now();const f=n=>{const p=Math.min(1,(n-s)/dur),v=Math.round(t*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString('ru-RU');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');
+    t.querySelectorAll('[data-count]').forEach(count);
+    if(t.id==='stats'){const ds=[...d.children];ds.forEach((x,i)=>setTimeout(()=>x.classList.add('on'),i*25))}
+    io.unobserve(t)}),{threshold:.15});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=((i%3)*90)+'ms';io.observe(el)});
+  ['stats','pathline'].forEach(id=>io.observe(document.getElementById(id)));
+  document.querySelectorAll('.st').forEach(s=>io.observe(s));
+
+  document.getElementById('lead').addEventListener('submit',e=>{
+    e.preventDefault(); // TODO: подключить отправку заявки на почту / в CRM
+    document.getElementById('ok').style.display='block';e.target.reset();
+  });
+})();
+</script>
+
+<div class="progress" id="progress"></div>
+<button class="totop" id="totop" aria-label="Наверх"><svg><use href="#i-ar"/></svg></button>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="m-ov" data-close></div>
+  <div class="m-box" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="m-x" data-close aria-label="Закрыть"></button>
+    <div class="m-side">
+      <svg class="big bear" viewBox="0 0 69 55" aria-hidden="true"><use href="#bear"/></svg>
+      <div>
+        <svg class="bear" viewBox="0 0 69 55"><use href="#bear"/></svg>
+        <h3>Северная Волна</h3>
+        <p>Свежая рыба и морепродукты для ресторанов, отелей и магазинов Петербурга с 2008 года.</p>
+      </div>
+      <ul>
+        <li><svg><use href="#i-check"/></svg>Ответим в рабочее время</li>
+        <li><svg><use href="#i-check"/></svg>Подберём ассортимент под меню</li>
+        <li><svg><use href="#i-check"/></svg>Доставка в день заказа</li>
+      </ul>
+      <a href="tel:+79111489999">+7 (911) 148-99-99</a>
+    </div>
+    <div class="m-main" id="m-main">
+      <h3 id="m-title">Оставить заявку</h3>
+      <p>Заполните форму — менеджер свяжется с вами и ответит на вопросы.</p>
+      <form id="m-form">
+        <div class="fi"><label>Что вас интересует</label>
+          <div class="chips">
+            <label><input type="radio" name="mtopic" value="Заказ" checked><span>Заказ</span></label>
+            <label><input type="radio" name="mtopic" value="Консультация"><span>Консультация</span></label>
+            <label><input type="radio" name="mtopic" value="Переработка"><span>Переработка / ТЗ</span></label>
+            <label><input type="radio" name="mtopic" value="Сотрудничество"><span>Сотрудничество</span></label>
+          </div>
+        </div>
+        <div class="r2">
+          <div class="fi"><label for="m1">Имя</label><input id="m1" name="name" placeholder="Как к вам обращаться" required></div>
+          <div class="fi"><label for="m2">Телефон</label><input id="m2" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
+        </div>
+        <div class="fi"><label for="m3">Компания</label><input id="m3" name="company" placeholder="Ресторан, магазин, сеть…"></div>
+        <div class="fi"><label for="m4">Комментарий</label><textarea id="m4" name="msg" placeholder="Позиции, объёмы, периодичность"></textarea></div>
+        <button class="btn btn-wine" type="submit">Отправить заявку <svg><use href="#i-ar"/></svg></button>
+        <p class="cons">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</p>
+      </form>
+      <div class="m-done">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/><path d="M30 52l13 13 27-29"/></svg>
+        <h3>Заявка отправлена!</h3>
+        <p>Спасибо — менеджер свяжется с вами в ближайшее рабочее время.</p>
+        <button class="btn btn-out" data-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+  /* split section headings into words */
+  $$('section h2').forEach(h=>{
+    let i=0;
+    const walk=n=>[...n.childNodes].forEach(c=>{
+      if(c.nodeType===3){
+        const f=document.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(p=>{
+          if(!p)return;
+          if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}
+          const w=document.createElement('span'),s=document.createElement('span');
+          w.className='w';s.textContent=p;s.style.transitionDelay=(i++*70)+'ms';w.appendChild(s);f.appendChild(w);
+        });
+        c.replaceWith(f);
+      } else if(c.nodeType===1 && c.tagName.toLowerCase()!=='svg') walk(c);
+    });
+    walk(h);h.classList.add('split');
+  });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.25});
+  $$('h2.split,.kicker').forEach(el=>io.observe(el));
+
+  /* scroll: progress, parallax, back-to-top */
+  const pr=$('#progress'),tt=$('#totop'),px=$$('[data-speed]');
+  const onScroll=()=>{
+    const h=document.documentElement.scrollHeight-innerHeight;
+    pr.style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+    tt.classList.toggle('show',scrollY>900);
+    px.forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<-200||r.top>innerHeight+200)return;
+      const c=r.top+r.height/2-innerHeight/2;el.style.translate='0 '+(-c*el.dataset.speed).toFixed(1)+'px'});
+  };
+  addEventListener('scroll',()=>requestAnimationFrame(onScroll),{passive:true});onScroll();
+  tt.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+  /* 3D tilt on cards */
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    $$('.card,.sv,.post,.feat').forEach(c=>{
+      const k=c.classList.contains('card')?7:4;
+      c.addEventListener('mouseenter',()=>c.style.transition='transform .15s ease-out,box-shadow .3s');
+      c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+        c.style.transform='perspective(900px) rotateX('+(-y*k)+'deg) rotateY('+(x*k)+'deg) translateY(-4px)'});
+      c.addEventListener('mouseleave',()=>{c.style.transition='transform .6s cubic-bezier(.2,.8,.2,1)';c.style.transform=''});
+    });
+    /* magnetic buttons */
+    $$('.btn').forEach(b=>{
+      b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.12)+'px '+((e.clientY-r.top-r.height/2)*.25)+'px'});
+      b.addEventListener('mouseleave',()=>b.style.translate='');
+    });
+  }
+
+  /* smooth FAQ */
+  $$('details').forEach(d=>{
+    const p=d.querySelector('p');
+    d.querySelector('summary').addEventListener('click',e=>{
+      e.preventDefault();
+      const pb=getComputedStyle(p).paddingBottom;
+      if(d.open){
+        const h=p.offsetHeight;p.style.overflow='hidden';
+        p.animate([{height:h+'px',paddingBottom:pb,opacity:1},{height:'0px',paddingBottom:'0px',opacity:0}],{duration:320,easing:'ease'}).onfinish=()=>{d.open=false;p.style.overflow=''};
+      }else{
+        d.open=true;const h=p.offsetHeight;p.style.overflow='hidden';
+        p.animate([{height:'0px',paddingBottom:'0px',opacity:0},{height:h+'px',paddingBottom:getComputedStyle(p).paddingBottom,opacity:1}],{duration:380,easing:'cubic-bezier(.2,.8,.2,1)'}).onfinish=()=>p.style.overflow='';
+      }
+    });
+  });
+
+  /* modal */
+  const m=$('#modal'),mm=$('#m-main');let last=null;
+  const open=e=>{e&&e.preventDefault();last=document.activeElement;mm.classList.remove('done');m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.classList.add('lock');setTimeout(()=>$('#m1').focus({preventScroll:true}),350)};
+  const close=()=>{m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.classList.remove('lock');last&&last.focus&&last.focus({preventScroll:true})};
+  $$('[data-modal]').forEach(b=>b.addEventListener('click',open));
+  m.addEventListener('click',e=>{if(e.target.closest('[data-close]'))close()});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))close()});
+  $('#m-form').addEventListener('submit',e=>{
+    e.preventDefault(); // TODO: подключить отправку заявки на почту / в CRM
+    mm.classList.add('done');e.target.reset();
+  });
+})();
+</script>
+</body>
+</html>
