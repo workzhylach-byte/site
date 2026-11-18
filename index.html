@@ -380,6 +380,7 @@ footer a:hover{color:#fff}
   .hdr.open .menu{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:#fff;padding:8px var(--g) 24px;border-bottom:1px solid var(--line);box-shadow:0 30px 40px -30px rgba(15,42,61,.4)}
   .hdr.open .menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:18px}
   .hdr-cta{margin-left:auto}
+  .why-grid,.geo-grid,.faq-grid{grid-template-columns:1fr;gap:56px}
   .st-grid{grid-template-columns:1fr 1fr}
   .cat-grid{grid-template-columns:1fr 1fr}
   .path-line{grid-template-columns:1fr;gap:28px;max-width:520px;margin-left:auto;margin-right:auto}
@@ -532,6 +533,7 @@ body.lock{overflow:hidden}
 }
 @media (prefers-reduced-motion:reduce){h2.split .w>span,.pt,.kicker,.why-photo .ph,.why-photo .seal{transform:none!important;opacity:1!important;clip-path:none!important}}
 @media (prefers-reduced-motion:reduce){.hero h1 .ln>span,.fu{transform:none!important;opacity:1!important}.hero h1 i::after{transform:none!important}.hs-ring .fg{stroke-dashoffset:0!important}}
+@supports not (overflow-x:clip){html{overflow-x:hidden}}
 </style>
 </head>
 <body>
