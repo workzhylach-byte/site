@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Северная Волна — свежая рыба и морепродукты для ресторанов Петербурга</title>
-<meta name="description" content="Производство и оптовые поставки свежей рыбы, икры и морепродуктов для ресторанов, отелей и магазинов Санкт-Петербурга. Доставка в день заказа с термоконтролем.">
+<meta name="description" content="Производство и оптовые поставки свежей рыбы, икры и морепродуктов для ресторанов, отелей и магазинов Санкт-Петербурга. Бесплатная доставка с термоконтролем.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0f2a3d; --navy-2:#173a52; --deep:#0a1e2c;
+  --navy:#0f2a3d; --navy-2:#173a52; --deep:#06467a; --ocean:#0b7ac6; --ocean-2:#1a96e0; --ocean-d:#075c9b;
   --ice:#eef4f7; --ice-2:#e1ebf1; --frost:#f7fafb; --white:#fff;
   --wine:#9c2835; --wine-2:#b5323f; --wine-soft:#f6e6e8;
   --salmon:#ef8a6b; --sea:#2c7fb0; --mint:#37b39a;
@@ -50,7 +50,7 @@ section{padding:120px 0;position:relative}
 .bear path{fill:currentColor}
 
 /* top bar + header */
-.topbar{background:var(--navy);color:#b9cbd7;font-size:13px}
+.topbar{background:var(--ocean-d);color:#dcecf7;font-size:13px}
 .topbar .wrap{display:flex;justify-content:space-between;gap:20px;height:40px;align-items:center}
 .topbar b{color:#fff;font-weight:700}
 .topbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mint);margin-right:8px;box-shadow:0 0 0 4px rgba(55,179,154,.2);animation:pulse 2s infinite}
@@ -78,11 +78,11 @@ section{padding:120px 0;position:relative}
 .hdr.open .burger i:nth-child(3){top:23px;transform:rotate(-45deg)}
 
 /* hero (v4) */
-.hero{position:relative;min-height:max(700px,calc(100svh - 124px));display:flex;flex-direction:column;justify-content:center;padding:90px 0 170px;color:#fff;background:var(--navy);overflow:hidden;isolation:isolate}
+.hero{position:relative;min-height:max(700px,calc(100svh - 124px));display:flex;flex-direction:column;justify-content:center;padding:90px 0 170px;color:#fff;background:linear-gradient(180deg,#1aa0e6,#0b7ac6);overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:-60px 0;z-index:-2}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:68% 50%;animation:kb 24s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.13) translate(-1.5%,1%)}}
-.hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,26,39,.92) 0%,rgba(9,26,39,.72) 38%,rgba(9,26,39,.15) 72%,rgba(9,26,39,0) 100%),linear-gradient(0deg,rgba(9,26,39,.75) 0%,transparent 45%)}
+.hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,98,170,.82) 0%,rgba(10,120,200,.55) 38%,rgba(20,140,220,.08) 68%,rgba(20,140,220,0) 100%),linear-gradient(0deg,rgba(7,92,155,.55) 0%,transparent 40%)}
 .hero>.wrap{width:100%;position:relative}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:28px}
 .badge b{white-space:nowrap;background:var(--wine);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;letter-spacing:.06em}
@@ -93,8 +93,8 @@ section{padding:120px 0;position:relative}
 .hero h1 .ln>span{display:inline-block;white-space:nowrap;transform:translateY(110%);animation:lnUp 1.1s cubic-bezier(.2,.8,.2,1) forwards}
 .hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
 .hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
-.hero h1 i{color:#ffa385;font-weight:500;position:relative}
-.hero h1 i::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:3px;border-radius:3px;background:#ffa385;transform:scaleX(0);transform-origin:0 50%;animation:uline 1s .9s cubic-bezier(.7,0,.2,1) forwards}
+.hero h1 i{color:#ffd166;font-weight:500;position:relative}
+.hero h1 i::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:3px;border-radius:3px;background:#ffd166;transform:scaleX(0);transform-origin:0 50%;animation:uline 1s .9s cubic-bezier(.7,0,.2,1) forwards}
 @keyframes uline{to{transform:scaleX(1)}}
 @keyframes lnUp{to{transform:none}}
 .hero p.sub{font-size:19px;color:#d3e0e8;max-width:540px;margin-bottom:38px}
@@ -113,26 +113,26 @@ section{padding:120px 0;position:relative}
 @keyframes ring{to{stroke-dashoffset:0}}
 .hs-ring text{fill:#fff;font:700 15px var(--sans)}
 .hs-top b{display:block;font-family:var(--serif);font-size:24px;line-height:1.15}
-.hs-top span{font-size:13px;color:#c4d4de}
+.hs-top span{font-size:13px;color:#e0eff9}
 .hero-side ul{list-style:none;display:grid;gap:12px}
 .hero-side li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:600}
 .hero-side li svg{width:20px;height:20px;color:#6fe0c4;flex:none}
-.hs-live{margin-top:18px;font-size:13px;color:#c4d4de;display:flex;align-items:center;gap:8px}
+.hs-live{margin-top:18px;font-size:13px;color:#e0eff9;display:flex;align-items:center;gap:8px}
 .hs-live .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#37b39a;box-shadow:0 0 0 4px rgba(55,179,154,.25);animation:pulse 2s infinite}
 
-.hero-bar{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border-radius:20px;background:rgba(9,26,39,.45);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero-bar{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border-radius:20px;background:rgba(5,80,140,.35);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .hero-bar div{display:flex;align-items:center;gap:14px;padding:20px 22px;font-size:14px;font-weight:600;line-height:1.3}
 .hero-bar div+div{border-left:1px solid rgba(255,255,255,.12)}
-.hero-bar svg{width:36px;height:36px;flex:none;padding:8px;border-radius:10px;background:rgba(255,255,255,.1);color:#ffa385}
+.hero-bar svg{width:36px;height:36px;flex:none;padding:8px;border-radius:10px;background:rgba(255,255,255,.1);color:#ffd166}
 
 .scroll-hint{position:absolute;left:50%;bottom:104px;transform:translateX(-50%);width:26px;height:40px;border-radius:14px;border:2px solid rgba(255,255,255,.5)}
 .scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:wheel 1.8s infinite}
 @keyframes wheel{0%{opacity:0;transform:translateY(-4px)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 .hero-waves{position:absolute;left:0;right:0;bottom:-1px;height:96px;overflow:hidden;pointer-events:none}
 .wv{position:absolute;left:0;bottom:0;width:200%;animation:wv 20s linear infinite}
-.wv.w1{height:100%;fill:rgba(15,42,61,.35);animation-duration:30s}
-.wv.w2{height:78%;fill:rgba(15,42,61,.6);animation-duration:22s;animation-direction:reverse}
-.wv.w3{height:56%;fill:#0f2a3d;animation-duration:16s}
+.wv.w1{height:100%;fill:rgba(11,122,198,.35);animation-duration:30s}
+.wv.w2{height:78%;fill:rgba(11,122,198,.65);animation-duration:22s;animation-direction:reverse}
+.wv.w3{height:56%;fill:#0b7ac6;animation-duration:16s}
 @keyframes wv{to{transform:translateX(-50%)}}
 
 @media (max-width:1140px){
@@ -145,7 +145,7 @@ section{padding:120px 0;position:relative}
 }
 @media (max-width:640px){
   .hero{min-height:auto;padding:48px 0 120px}
-  .hero-shade{background:linear-gradient(180deg,rgba(9,26,39,.88) 0%,rgba(9,26,39,.7) 55%,rgba(9,26,39,.9) 100%)}
+  .hero-shade{background:linear-gradient(180deg,rgba(6,98,170,.78) 0%,rgba(10,120,200,.55) 55%,rgba(7,92,155,.85) 100%)}
   .hero h1{font-size:clamp(36px,10.5vw,46px)}
   .hero h1 .ln>span{white-space:normal}
   .hero p.sub{font-size:16px}
@@ -157,26 +157,26 @@ section{padding:120px 0;position:relative}
 }
 
 /* stats */
-.stats{background:var(--navy);color:#fff;padding:80px 0 90px;overflow:hidden}
+.stats{background:linear-gradient(180deg,var(--ocean) 0%,var(--ocean-d) 100%);color:#fff;padding:80px 0 90px;overflow:hidden}
 .stats .wm{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:900px;color:#fff;opacity:.03}
 .st-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.st{padding:30px;border-radius:var(--r);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.st{padding:30px;border-radius:var(--r);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
 .st .num{font-family:var(--serif);font-size:clamp(40px,4vw,56px);line-height:1;font-weight:600}
-.st .num small{font-size:.5em;color:var(--salmon);margin-left:4px}
-.st p{color:#a9bfcd;font-size:14px;margin-top:10px}
+.st .num small{font-size:.5em;color:#ffd166;margin-left:4px}
+.st p{color:#d9ecf8;font-size:14px;margin-top:10px}
 .st .viz{height:46px;margin-top:22px}
 .st .viz svg{width:100%;height:100%;overflow:visible}
 .spark{fill:none;stroke:var(--salmon);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 2s ease}
 .in .spark{stroke-dashoffset:0}
 .dots{display:flex;flex-wrap:wrap;gap:5px}
-.dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.18)}
+.dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.28)}
 .dots i.on{background:var(--salmon)}
 .yrs{display:flex;align-items:flex-end;gap:5px;height:100%}
 .yrs i{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--salmon),rgba(239,138,107,.2));height:0;transition:height 1.2s cubic-bezier(.2,.8,.2,1)}
 .in .yrs i{height:var(--h)}
 .clock{display:flex;align-items:center;gap:14px}
 .st .clock svg{width:46px;height:46px;flex:none}
-.clock span{font-size:13px;color:#a9bfcd;line-height:1.35}
+.clock span{font-size:13px;color:#d9ecf8;line-height:1.35}
 
 /* clients */
 .clients{padding:56px 0;background:var(--ice)}
@@ -248,20 +248,20 @@ section{padding:120px 0;position:relative}
 .feat p{font-size:14px;color:var(--muted)}
 
 /* services */
-.svc{background:var(--navy);color:#fff;overflow:hidden}
+.svc{background:linear-gradient(160deg,var(--ocean) 0%,var(--ocean-d) 100%);color:#fff;overflow:hidden}
 .svc .kicker{color:var(--salmon)}
 .svc h2 i{color:var(--salmon)}
-.svc .lead{color:#a9bfcd}
+.svc .lead{color:#d9ecf8}
 .svc .wm{position:absolute;right:-120px;top:40px;width:560px;color:#fff;opacity:.04}
 .svc-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px}
-.sv{border-radius:28px;overflow:hidden;background:var(--navy-2);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column}
+.sv{border-radius:28px;overflow:hidden;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column}
 .sv .ph{height:300px;position:relative;overflow:hidden;background:linear-gradient(160deg,#2c5a78,#0f2a3d)}
 .sv .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
 .sv:hover .ph img{transform:scale(1.06)}
 .sv .ph b{position:absolute;left:24px;top:24px;font-size:12px;font-weight:800;letter-spacing:.14em;padding:7px 14px;border-radius:999px;background:var(--wine)}
 .sv .c{padding:36px;display:flex;flex-direction:column;gap:18px;flex:1}
 .sv h3{font-size:30px}
-.sv p{color:#b9cbd7}
+.sv p{color:#e0eff9}
 .sv ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
 .sv li{display:flex;gap:10px;font-size:15px;color:#dce7ee}
 .sv li svg{flex:none;width:20px;height:20px;color:var(--mint);margin-top:2px}
@@ -296,10 +296,10 @@ section{padding:120px 0;position:relative}
 /* faq */
 .faq{background:var(--ice)}
 .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
-.faq-card{margin-top:34px;padding:30px;border-radius:var(--r);background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.faq-card{margin-top:34px;padding:30px;border-radius:var(--r);background:linear-gradient(160deg,var(--ocean),var(--ocean-d));color:#fff;position:relative;overflow:hidden}
 .faq-card .bear{position:absolute;right:-30px;bottom:-20px;width:200px;color:#fff;opacity:.07}
 .faq-card b{font-family:var(--serif);font-size:24px;display:block;margin-bottom:8px}
-.faq-card p{color:#a9bfcd;margin-bottom:20px}
+.faq-card p{color:#d9ecf8;margin-bottom:20px}
 details{background:#fff;border-radius:18px;margin-bottom:12px;border:1px solid var(--line);transition:box-shadow .3s}
 details[open]{box-shadow:0 20px 40px -28px rgba(15,42,61,.5)}
 summary{list-style:none;cursor:pointer;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-weight:700;font-size:18px;color:var(--navy)}
@@ -327,15 +327,15 @@ details p{padding:0 28px 26px;color:var(--muted)}
 /* contact */
 .contact{padding-top:0}
 .ct-box{display:grid;grid-template-columns:1fr 1fr;border-radius:32px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(15,42,61,.5)}
-.ct-l{background:var(--navy);color:#fff;padding:56px;position:relative;overflow:hidden}
+.ct-l{background:linear-gradient(160deg,var(--ocean) 0%,var(--ocean-d) 100%);color:#fff;padding:56px;position:relative;overflow:hidden}
 .ct-l .wm{position:absolute;right:-60px;bottom:-40px;width:380px;color:#fff;opacity:.05}
 .ct-l h2{margin-bottom:12px}
 .ct-l h2 i{color:var(--salmon)}
-.ct-l > p{color:#a9bfcd;margin-bottom:34px}
+.ct-l > p{color:#d9ecf8;margin-bottom:34px}
 .ci{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);position:relative}
 .ci .ic{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:var(--salmon)}
 .ci .ic svg{width:20px;height:20px}
-.ci small{display:block;color:#8ea6b6;font-size:13px}
+.ci small{display:block;color:#c5def0;font-size:13px}
 .ci b{font-size:17px;font-weight:700}
 .ct-r{background:#fff;padding:56px}
 .ct-r h3{font-size:30px;color:var(--navy);margin-bottom:8px}
@@ -358,12 +358,12 @@ form .btn{width:100%;margin-top:6px}
 .ok{display:none;padding:14px 16px;border-radius:12px;background:#e3f6f1;color:#1d7a67;font-weight:700}
 
 /* footer */
-footer{background:var(--deep);color:#8ea6b6;font-size:14px;position:relative;margin-top:60px}
+footer{background:var(--deep);color:#c5def0;font-size:14px;position:relative;margin-top:60px}
 footer .wave{position:absolute;left:0;right:0;top:-59px;width:100%;height:60px}
 .f-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding:70px 0 50px}
 footer .logo{color:#fff;margin-bottom:18px}
 footer .logo-t{color:#fff}
-footer .logo-t small{color:#8ea6b6}
+footer .logo-t small{color:#c5def0}
 footer h4{color:#fff;font-size:15px;margin-bottom:16px}
 footer ul{list-style:none;display:grid;gap:9px}
 footer a:hover{color:#fff}
@@ -496,11 +496,11 @@ body.lock{overflow:hidden}
 .m-ov{position:absolute;inset:0;background:rgba(9,26,39,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .m-box{position:relative;width:min(880px,100%);max-height:calc(100svh - 32px);overflow:auto;display:grid;grid-template-columns:.8fr 1.2fr;border-radius:28px;background:#fff;box-shadow:0 50px 100px -30px rgba(0,0,0,.5);transform:translateY(40px) scale(.95);transition:transform .55s cubic-bezier(.2,.9,.25,1.05)}
 .modal.open .m-box{transform:none}
-.m-side{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:40px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.m-side{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ocean),var(--ocean-d));color:#fff;padding:40px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
 .m-side .bear{width:76px;color:#fff;opacity:.95}
 .m-side .big{position:absolute;right:-70px;bottom:-40px;width:300px;color:#fff;opacity:.06}
 .m-side h3{font-size:28px;margin:18px 0 10px}
-.m-side p{color:#a9bfcd;font-size:15px}
+.m-side p{color:#d9ecf8;font-size:15px}
 .m-side ul{list-style:none;display:grid;gap:10px;position:relative}
 .m-side li{display:flex;gap:10px;font-size:14px;color:#dce7ee}
 .m-side li svg{width:18px;height:18px;color:#6fe0c4;flex:none;margin-top:2px}
@@ -616,7 +616,7 @@ body.lock{overflow:hidden}
           <span class="ln"><span>для <i>лучших кухонь</i></span></span>
           <span class="ln"><span>Петербурга</span></span>
         </h1>
-        <p class="sub fu d2">Производим, упаковываем и доставляем филе, рыбу слабой соли и копчения, икру и морепродукты. Под ваши техкарты — в день заказа.</p>
+        <p class="sub fu d2">Производим, упаковываем и доставляем филе, рыбу слабой соли и копчения, икру и морепродукты. Под ваши техкарты — в кратчайшие сроки.</p>
         <div class="hero-act fu d3">
           <a class="btn btn-wine" href="#contacts" data-modal>Оставить заявку <svg><use href="#i-ar"/></svg></a>
           <a class="btn btn-glass" href="#catalog">Смотреть каталог</a>
@@ -628,7 +628,7 @@ body.lock{overflow:hidden}
           <div><b>От вылова до кухни</b><span>охлаждённая рыба не старше суток</span></div>
         </div>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Доставка в день заказа</li>
+          <li><svg><use href="#i-check"/></svg>Бесплатная доставка</li>
           <li><svg><use href="#i-check"/></svg>Термоконтроль в пути</li>
           <li><svg><use href="#i-check"/></svg>Ветсопровождение партии</li>
         </ul>
@@ -722,7 +722,7 @@ body.lock{overflow:hidden}
   <svg class="topo" aria-hidden="true"><rect width="100%" height="100%" fill="url(#topo)"/></svg>
   <div class="wrap center" style="position:relative">
     <div class="kicker"><svg><use href="#wave-k"/></svg>Путь продукта</div>
-    <h2>От моря до вашей кухни — <i>за сутки</i></h2>
+    <h2>От моря до вашей кухни — <i>под контролем</i></h2>
     <p class="lead">Контролируем каждый этап сами: от закупки сырья до передачи заказа на вашу кухню.</p>
     <div class="path-line" id="pathline">
       <div class="track"><i></i></div>
@@ -730,7 +730,7 @@ body.lock{overflow:hidden}
       <div class="pt"><div class="ic"><svg><use href="#i-knife"/></svg></div><span class="t">ЭТАП 2</span><h3>Ручная разделка</h3><p>Филетирование и нарезка под техкарту</p></div>
       <div class="pt"><div class="ic"><svg><use href="#i-fish"/></svg></div><span class="t">ЭТАП 3</span><h3>Посол и копчение</h3><p>Только соль, натуральный дым и холод</p></div>
       <div class="pt"><div class="ic"><svg><use href="#i-box"/></svg></div><span class="t">ЭТАП 4</span><h3>Упаковка</h3><p>Вакуум, маркировка, документы</p></div>
-      <div class="pt"><div class="ic"><svg><use href="#i-truck"/></svg></div><span class="t">ЭТАП 5</span><h3>Доставка</h3><p>В день заказа с термоконтролем</p></div>
+      <div class="pt"><div class="ic"><svg><use href="#i-truck"/></svg></div><span class="t">ЭТАП 5</span><h3>Доставка</h3><p>Бесплатно, с соблюдением температуры</p></div>
     </div>
     <div class="path-foot">
       <div class="pf rv"><span class="ic"><svg><use href="#i-therm"/></svg></span><div><b>Термоконтроль</b><span>Рефрижераторы на всём пути</span></div></div>
@@ -756,7 +756,7 @@ body.lock{overflow:hidden}
       <h2>Качество, которое <i>видно</i> на срезе</h2>
       <p class="lead">Шесть причин, по которым шефы и закупщики работают с нами годами.</p>
       <div class="feats">
-        <div class="feat rv"><span class="ic"><svg><use href="#i-truck"/></svg></span><h3>Доставка в день заказа</h3><p>Собственный транспорт с рефрижераторами.</p></div>
+        <div class="feat rv"><span class="ic"><svg><use href="#i-truck"/></svg></span><h3>Бесплатная доставка</h3><p>Собственный транспорт с рефрижераторами.</p></div>
         <div class="feat rv"><span class="ic"><svg><use href="#i-chef"/></svg></span><h3>Под ваши техкарты</h3><p>Нарезка, порции, свои рецептуры.</p></div>
         <div class="feat rv"><span class="ic"><svg><use href="#i-cal"/></svg></span><h3>Работаем с 2008 года</h3><p>Почти 20 лет на рынке Петербурга.</p></div>
         <div class="feat rv"><span class="ic"><svg><use href="#i-layers"/></svg></span><h3>Не только рыба</h3><p>Икра, морепродукты, салаты, паназия.</p></div>
@@ -821,7 +821,7 @@ body.lock{overflow:hidden}
       <p class="lead">Производство в г.п. им. Свердлова — рядом с городом, поэтому рыба приезжает к вам быстро и в нужной температуре.</p>
       <div class="geo-list">
         <div class="rv"><i style="border-color:#9c2835"></i><b>Производство</b><span>г.п. им. Свердлова</span></div>
-        <div class="rv"><i style="border-color:#2c7fb0"></i><b>Санкт-Петербург</b><span>доставка в день заказа</span></div>
+        <div class="rv"><i style="border-color:#2c7fb0"></i><b>Санкт-Петербург</b><span>бесплатная доставка</span></div>
         <div class="rv"><i style="border-color:#37b39a"></i><b>Ленинградская область</b><span>по согласованию</span></div>
         <div class="rv"><i style="border-color:#ef8a6b"></i><b>Регионы России</b><span>работаем по запросу</span></div>
       </div>
@@ -940,7 +940,7 @@ body.lock{overflow:hidden}
 </section>
 
 <footer>
-  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c120-26 240-26 360 0s240 26 360 0 240-26 360 0 240 26 360 0v30H0z" fill="#0a1e2c"/></svg>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c120-26 240-26 360 0s240 26 360 0 240-26 360 0 240 26 360 0v30H0z" fill="#06467a"/></svg>
   <div class="wrap">
     <div class="f-top">
       <div>
@@ -1001,7 +1001,7 @@ body.lock{overflow:hidden}
       <ul>
         <li><svg><use href="#i-check"/></svg>Ответим в рабочее время</li>
         <li><svg><use href="#i-check"/></svg>Подберём ассортимент под меню</li>
-        <li><svg><use href="#i-check"/></svg>Доставка в день заказа</li>
+        <li><svg><use href="#i-check"/></svg>Бесплатная доставка</li>
       </ul>
       <a href="tel:+79111489999">+7 (911) 148-99-99</a>
     </div>
